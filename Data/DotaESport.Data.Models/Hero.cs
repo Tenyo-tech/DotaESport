@@ -7,8 +7,12 @@
     {
         public string Name { get; set; }
 
+        public string ImgUrl { get; set; }
+
         public AttackType AttackType { get; set; }
 
-        public AttributeType AttributeType { get; set; }
+        public string AttributeInfoId { get; set; }
+
+        public AttributeInfo AttributeInfo { get; set; }
     }
 }
