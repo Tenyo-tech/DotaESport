@@ -13,6 +13,6 @@
 
         public string AttributeInfoId { get; set; }
 
-        public AttributeInfo AttributeInfo { get; set; }
+        public AttributeInfo? AttributeInfo { get; set; }
     }
 }
