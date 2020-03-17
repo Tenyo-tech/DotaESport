@@ -4,14 +4,16 @@ using DotaESport.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotaESport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200317140320_AddHeroAndHeroAbilitiesTables")]
+    partial class AddHeroAndHeroAbilitiesTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,22 +146,22 @@ namespace DotaESport.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<double?>("AgilityPerLevel")
+                    b.Property<double>("AgilityPerLevel")
                         .HasColumnType("float");
 
-                    b.Property<double?>("BaseAgility")
+                    b.Property<double>("BaseAgility")
                         .HasColumnType("float");
 
-                    b.Property<double?>("BaseIntelligence")
+                    b.Property<double>("BaseIntelligence")
                         .HasColumnType("float");
 
-                    b.Property<double?>("BaseStrength")
+                    b.Property<double>("BaseStrength")
                         .HasColumnType("float");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<double?>("IntelligencePerLevel")
+                    b.Property<double>("IntelligencePerLevel")
                         .HasColumnType("float");
 
                     b.Property<string>("MainAttribute")
@@ -168,7 +170,7 @@ namespace DotaESport.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<double?>("StrengthPerLevel")
+                    b.Property<double>("StrengthPerLevel")
                         .HasColumnType("float");
 
                     b.HasKey("Id");

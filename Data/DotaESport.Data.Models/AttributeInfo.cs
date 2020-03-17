@@ -13,17 +13,17 @@
 
         public string MainAttribute { get; set; }
 
-        public double BaseStrength { get; set; }
+        public double? BaseStrength { get; set; }
 
-        public double StrengthPerLevel { get; set; }
+        public double? StrengthPerLevel { get; set; }
 
-        public double BaseAgility { get; set; }
+        public double? BaseAgility { get; set; }
 
-        public double AgilityPerLevel { get; set; }
+        public double? AgilityPerLevel { get; set; }
 
-        public double BaseIntelligence { get; set; }
+        public double? BaseIntelligence { get; set; }
 
-        public double IntelligencePerLevel { get; set; }
+        public double? IntelligencePerLevel { get; set; }
 
         public ICollection<Hero> Heroes { get; set; }
     }

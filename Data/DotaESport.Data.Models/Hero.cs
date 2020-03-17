@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Data.Models
+﻿using System.Collections.Generic;
+
+namespace DotaESport.Data.Models
 {
     using DotaESport.Data.Common.Models;
     using DotaESport.Data.Models.Enums;
@@ -9,10 +11,12 @@
 
         public string ImgUrl { get; set; }
 
-        public AttackType AttackType { get; set; }
+        public AttackType? AttackType { get; set; }
 
         public string AttributeInfoId { get; set; }
 
         public AttributeInfo? AttributeInfo { get; set; }
+
+        public ICollection<HeroAbility> HeroAbilities { get; set; }
     }
 }
