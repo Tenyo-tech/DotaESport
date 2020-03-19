@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\DotaESport.Data.Common\DotaESport.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\DotaESport.Data.Models\DotaESport.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\DotaESport.Web.ViewModels\DotaESport.Web.ViewModels.csproj" />
     <ProjectReference Include="..\DotaESport.Services.Mapping\DotaESport.Services.Mapping.csproj" />
   </ItemGroup>
 

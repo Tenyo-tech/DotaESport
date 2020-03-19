@@ -1,0 +1,26 @@
+﻿
+
+@using DotaESport.Common
+@{
+    this.ViewData["Title"] = "Add Heroes";
+}
+
+    <form method="post">
+        <div class="form-group col-md-4">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="Name">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="imgUrl">ImgUrl</label>
+            <input type="text" class="form-control" id="imgUrl" name="ImgUrl">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="mainAttribute">Main Attribute</label>
+            <select id="mainAttribute" class="form-control" name="MainAttribute">
+                <option>STRENGTH</option>
+                <option>AGILITY</option>
+                <option>INTELLIGENCE</option>
+            </select>
+        </div>
+        <button type="submit" asp-controller="Heroes" asp-action="Add" class="btn btn-primary">Submit</button>
+    </form>

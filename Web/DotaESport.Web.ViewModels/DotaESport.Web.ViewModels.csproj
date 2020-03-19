@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Heroes\" />
+    <Folder Include="Heroes\ViewModels\" />
   </ItemGroup>
 
 </Project>
