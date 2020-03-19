@@ -23,6 +23,7 @@ namespace DotaESport.Services.Data
         {
             var hero = new Hero
             {
+                Id = Guid.NewGuid().ToString(),
                 Name = model.Name,
                 ImgUrl = model.ImgUrl,
                 MainAttribute = model.MainAttribute,
