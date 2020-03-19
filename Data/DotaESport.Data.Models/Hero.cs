@@ -1,21 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using DotaESport.Data.Common.Models;
 
 namespace DotaESport.Data.Models
 {
-    using DotaESport.Data.Common.Models;
-    using DotaESport.Data.Models.Enums;
-
-    public class Hero : BaseModel<string>
+    public class Hero : BaseDeletableModel<string>
     {
         public string Name { get; set; }
 
         public string ImgUrl { get; set; }
 
-        public AttackType? AttackType { get; set; }
-
-        public string AttributeInfoId { get; set; }
-
-        public AttributeInfo? AttributeInfo { get; set; }
+        public string MainAttribute { get; set; }
 
         public ICollection<HeroAbility> HeroAbilities { get; set; }
     }

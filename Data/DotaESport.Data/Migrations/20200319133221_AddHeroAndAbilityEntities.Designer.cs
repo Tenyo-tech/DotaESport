@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotaESport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200317140320_AddHeroAndHeroAbilitiesTables")]
-    partial class AddHeroAndHeroAbilitiesTables
+    [Migration("20200319133221_AddHeroAndAbilityEntities")]
+    partial class AddHeroAndAbilityEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -141,58 +141,24 @@ namespace DotaESport.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("DotaESport.Data.Models.AttributeInfo", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<double>("AgilityPerLevel")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BaseAgility")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BaseIntelligence")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BaseStrength")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("IntelligencePerLevel")
-                        .HasColumnType("float");
-
-                    b.Property<string>("MainAttribute")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("StrengthPerLevel")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AttributeInfo");
-                });
-
             modelBuilder.Entity("DotaESport.Data.Models.Hero", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("AttackType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AttributeInfoId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ImgUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MainAttribute")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -203,7 +169,7 @@ namespace DotaESport.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AttributeInfoId");
+                    b.HasIndex("IsDeleted");
 
                     b.ToTable("Heroes");
                 });
@@ -219,11 +185,17 @@ namespace DotaESport.Data.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("HeroId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ImgURL")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ManaCost")
                         .HasColumnType("int");
@@ -240,6 +212,8 @@ namespace DotaESport.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("HeroId");
+
+                    b.HasIndex("IsDeleted");
 
                     b.ToTable("HeroAbilities");
                 });
@@ -378,13 +352,6 @@ namespace DotaESport.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("DotaESport.Data.Models.Hero", b =>
-                {
-                    b.HasOne("DotaESport.Data.Models.AttributeInfo", "AttributeInfo")
-                        .WithMany("Heroes")
-                        .HasForeignKey("AttributeInfoId");
                 });
 
             modelBuilder.Entity("DotaESport.Data.Models.HeroAbility", b =>

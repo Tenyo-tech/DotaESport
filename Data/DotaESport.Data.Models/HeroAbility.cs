@@ -1,8 +1,11 @@
-﻿using DotaESport.Data.Common.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using DotaESport.Data.Common.Models;
 
 namespace DotaESport.Data.Models
 {
-    public class HeroAbility : BaseModel<string>
+    public class HeroAbility : BaseDeletableModel<string>
     {
         public string Name { get; set; }
 
