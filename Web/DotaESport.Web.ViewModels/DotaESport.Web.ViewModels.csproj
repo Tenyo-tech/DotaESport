@@ -23,8 +23,4 @@
     <ProjectReference Include="..\..\Services\DotaESport.Services.Mapping\DotaESport.Services.Mapping.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Heroes\ViewModels\" />
-  </ItemGroup>
-
 </Project>

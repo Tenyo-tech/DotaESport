@@ -1,4 +1,6 @@
-﻿using DotaESport.Web.ViewModels.Heroes.InputModels;
+﻿using DotaESport.Services.Mapping;
+using DotaESport.Web.ViewModels.Heroes.InputModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotaESport.Services.Data
 {
@@ -32,5 +34,12 @@ namespace DotaESport.Services.Data
             await this.heroRepository.AddAsync(hero);
             await this.heroRepository.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<T>> GetAllHeroes<T>() =>
+            await this.heroRepository
+                .AllAsNoTracking()
+                .To<T>()
+                .ToArrayAsync();
+
     }
 }

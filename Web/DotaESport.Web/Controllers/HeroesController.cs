@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DotaESport.Services.Data;
 using DotaESport.Web.ViewModels.Heroes.InputModels;
+using DotaESport.Web.ViewModels.Heroes.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotaESport.Web.Controllers
@@ -27,7 +28,15 @@ namespace DotaESport.Web.Controllers
         {
             await this.heroService.AddHeroAsync(model);
 
-            return this.Redirect("/");
+            return this.Redirect("/Heroes/All");
+        }
+
+        public async Task<IActionResult> All()
+        {
+            var allHeroes = await this.heroService
+                .GetAllHeroes<AllHeroesViewModel>();
+
+            return this.View(allHeroes);
         }
     }
 }
