@@ -5,57 +5,79 @@
 @{
     this.ViewData["Title"] = "All Heroes";
 }
-@*<option>STRENGTH</option>
-    <option>AGILITY</option>
-    <option>INTELLIGENCE</option>*@
 
-<div class="col-md-4">
-    <h1>STRENGTH</h1>
-    @foreach (var item in Model)
-    {
-        @if (item.MainAttribute == "STRENGTH")
-        {
-            <div class="container">
-                <img src="@item.ImgUrl" alt="Avatar">
-                <div>
-                    <div>@item.Name</div>
-                </div>
-            </div>
-        }
-    }
+
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h1>STRENGTH</h1>
+            @foreach (var item in Model.OrderBy(x=>x.CreatedOn))
+            {
+                @if (item.MainAttribute == "STRENGTH")
+                {
+                    <div class="heroContainer">
+                        <img src="@item.ImgUrl" alt="Avatar" class="img-responsive">
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-4">
+            <h1>AGILITY</h1>
+            @foreach (var item in Model.OrderBy(x=>x.CreatedOn))
+            {
+                @if (item.MainAttribute == "AGILITY")
+                {
+                    <div class="heroContainer">
+                        <img src="@item.ImgUrl" alt="Avatar" class="img-responsive">
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-4">
+            <h1>INTELLIGENCE</h1>
+            @foreach (var item in Model.OrderBy(x=>x.CreatedOn))
+            {
+                @if (item.MainAttribute == "INTELLIGENCE")
+                {
+                    <div class="heroContainer">
+                        <img src="@item.ImgUrl" alt="Avatar" class="img-responsive">
+                    </div>
+                }
+            }
+        </div>
+    </div>
 </div>
 
-<div class="col-md-4">
-    <h1>AGILITY</h1>
-    @foreach (var item in Model)
-    {
-        @if (item.MainAttribute == "AGILITY")
-        {
-            <div class="container">
-                <img src="@item.ImgUrl" alt="Avatar">
-                <div>
-                    <div>@item.Name</div>
-                </div>
-            </div>
-        }
-    }
-</div>
+<br>
+<br>
+<br>
+@*<h3>Add Hero</h3>
+<form method="post">
+    <div class="form-group col-md-4">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="Name">
+    </div>
+    <div class="form-group col-md-4">
+        <label for="imgUrl">ImgUrl</label>
+        <input type="text" class="form-control" id="imgUrl" name="ImgUrl">
+    </div>
+    <div class="form-group col-md-4">
+        <label for="mainAttribute">Main Attribute</label>
+        <select id="mainAttribute" class="form-control" name="MainAttribute">
+            <option>INTELLIGENCE</option>
+            <option>AGILITY</option>
+            <option>STRENGTH</option>
 
-<div class="col-md-4">
-    <h1>INTELLIGENCE</h1>
-    @foreach (var item in Model)
-    {
-        @if (item.MainAttribute == "INTELLIGENCE")
-        {
-            <div class="container">
-                <img src="@item.ImgUrl" alt="Avatar">
-                <div>
-                    <div>@item.Name</div>
-                </div>
-            </div>
-        }
-    }
-</div>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>*@
+<br>
+<br>
 
-
-<a class="btn btn-primary" asp-area="" asp-controller="Heroes" asp-action="Add" role="button">Add Hero</a>
+@*<div>
+    <a class="btn btn-primary" asp-area="" asp-controller="Heroes" asp-action="Add" role="button">Add Hero</a>
+</div>*@

@@ -14,5 +14,7 @@
         public string ImgUrl { get; set; }
 
         public string MainAttribute { get; set; }
+
+        public DateTime CreatedOn { get; set; }
     }
 }

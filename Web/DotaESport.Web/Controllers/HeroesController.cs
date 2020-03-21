@@ -38,5 +38,13 @@ namespace DotaESport.Web.Controllers
 
             return this.View(allHeroes);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> All(AddHeroInputModel model)
+        {
+            await this.heroService.AddHeroAsync(model);
+
+            return this.Redirect("/Heroes/All");
+        }
     }
 }
