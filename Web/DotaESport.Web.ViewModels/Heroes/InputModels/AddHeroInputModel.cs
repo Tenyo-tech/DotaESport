@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotaESport.Web.ViewModels.Heroes.InputModels
+﻿namespace DotaESport.Web.ViewModels.Heroes.InputModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class AddHeroInputModel
     {
         public string Name { get; set; }

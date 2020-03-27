@@ -1,8 +1,4 @@
-﻿using DotaESport.Services.Mapping;
-using DotaESport.Web.ViewModels.Heroes.InputModels;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotaESport.Services.Data
+﻿namespace DotaESport.Services.Data
 {
     using System;
     using System.Collections.Generic;
@@ -11,6 +7,9 @@ namespace DotaESport.Services.Data
 
     using DotaESport.Data.Common.Repositories;
     using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
+    using DotaESport.Web.ViewModels.Heroes.InputModels;
+    using Microsoft.EntityFrameworkCore;
 
     public class HeroService : IHeroService
     {
@@ -40,6 +39,5 @@ namespace DotaESport.Services.Data
                 .AllAsNoTracking()
                 .To<T>()
                 .ToArrayAsync();
-
     }
 }
