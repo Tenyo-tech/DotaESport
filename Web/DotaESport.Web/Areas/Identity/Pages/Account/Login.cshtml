@@ -66,11 +66,13 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins)
                                 {
-                                    <button type="submit" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><img border="10" class="SteamLogo" src="https://static1.squarespace.com/static/53821120e4b08f61e7a51a97/t/59a9bf88e6f2e19fec27b9aa/1504297326282/Button-Steam.png" width="80" height="40"></button>
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+
                                 }
                             </p>
                         </div>
                     </form>
+
                 }
             }
         </section>

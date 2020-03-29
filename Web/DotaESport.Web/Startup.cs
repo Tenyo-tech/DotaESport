@@ -46,6 +46,8 @@
                         options.MinimumSameSitePolicy = SameSiteMode.None;
                     });
 
+            services.AddAuthentication().AddSteam();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
