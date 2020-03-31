@@ -21,6 +21,18 @@ namespace DotaESport.Services.Data
             this.articleRepository = articleRepository;
         }
 
+        public IEnumerable<T> GetAll<T>(int? count = null)
+        {
+            IQueryable<Article> query =
+                this.articleRepository.All().OrderBy(x => x.Title);
+            if (count.HasValue)
+            {
+                query = query.Take(count.Value);
+            }
+
+            return query.To<T>().ToList();
+        }
+
         public async Task<int> CreateAsync(CreateArticleViewModel model, string userId)
         {
             var article = new Article

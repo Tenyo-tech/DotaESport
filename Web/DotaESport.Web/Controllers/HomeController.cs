@@ -1,4 +1,10 @@
-﻿namespace DotaESport.Web.Controllers
+﻿using DotaESport.Services.Data;
+using DotaESport.Web.ViewModels.Administration.Dashboard;
+using DotaESport.Web.ViewModels.Home;
+using Microsoft.AspNetCore.Http;
+using IndexViewModel = DotaESport.Web.ViewModels.Home.IndexViewModel;
+
+namespace DotaESport.Web.Controllers
 {
     using System.Diagnostics;
 
@@ -8,15 +14,25 @@
 
     public class HomeController : BaseController
     {
-        public IActionResult Index()
+        private readonly IArticlesService articlesService;
+
+        public HomeController(IArticlesService articlesService)
         {
-            return this.View();
+            this.articlesService = articlesService;
         }
 
-        public IActionResult Privacy()
+        public IActionResult Index()
         {
-            return this.View();
+
+            var viewModel = new IndexViewModel
+            {
+                Articles = 
+                    this.articlesService.GetAll<IndexArticleViewModel>(),
+            };
+
+            return this.View(viewModel);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -9,6 +9,8 @@
 
     public interface IArticlesService
     {
+        IEnumerable<T> GetAll<T>(int? count = null);
+
         Task<int> CreateAsync(CreateArticleViewModel model, string userI);
 
         T GetById<T>(int id);
