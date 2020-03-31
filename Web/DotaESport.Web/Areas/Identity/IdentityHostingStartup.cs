@@ -1,4 +1,5 @@
 ﻿using System;
+
 using DotaESport.Data;
 using DotaESport.Data.Models;
 using Microsoft.AspNetCore.Hosting;

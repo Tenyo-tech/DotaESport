@@ -12,6 +12,5 @@
         Task AddHeroAsync(AddHeroInputModel model);
 
         Task<IEnumerable<T>> GetAllHeroes<T>();
-
     }
 }
