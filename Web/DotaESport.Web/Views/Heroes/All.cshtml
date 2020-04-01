@@ -9,17 +9,22 @@
 <br>
 <br>
 <br>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 text-center">
+        <h1 id="heroName" class="text-center text-warning text-opacity">CHOOSE A HERO</h1>
+    </div>
+</div>
 
-<h1 id="heroName" class="text-center">CHOOSE A HERO</h1>
 
 
 <br>
 <br>
 <br>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-4">
-            <h1>STRENGTH</h1>
+            <h1 class="text-warning text-opacity">STRENGTH</h1>
             @foreach (var item in Model.OrderBy(x => x.CreatedOn))
             {
                 @if (item.MainAttribute == "STRENGTH")
@@ -32,7 +37,7 @@
         </div>
 
         <div class="col-4">
-            <h1>AGILITY</h1>
+            <h1 class="text-warning text-opacity">AGILITY</h1>
             @foreach (var item in Model.OrderBy(x => x.CreatedOn))
             {
                 @if (item.MainAttribute == "AGILITY")
@@ -45,7 +50,7 @@
         </div>
 
         <div class="col-4">
-            <h1>INTELLIGENCE</h1>
+            <h1 class="text-warning text-opacity">INTELLIGENCE</h1>
             @foreach (var item in Model.OrderBy(x => x.CreatedOn))
             {
                 @if (item.MainAttribute == "INTELLIGENCE")
