@@ -7,8 +7,13 @@
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
 
-    public class ArticleViewModel : IMapFrom<Article>
+
+    public class ArticleViewModel : IMapFrom<Article>, IMapTo<Article>
     {
+        public int Id { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
         public string ImgUrl { get; set; }
 
         public string VideoUrl { get; set; }
@@ -17,5 +22,8 @@
 
         public string Content { get; set; }
 
+        public string UserUserName { get; set; }
+
+        public int VotesCount { get; set; }
     }
 }

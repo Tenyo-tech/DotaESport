@@ -1,4 +1,5 @@
-﻿using DotaESport.Services.Data;
+﻿using System.Linq;
+using DotaESport.Services.Data;
 using DotaESport.Web.ViewModels.Administration.Dashboard;
 using DotaESport.Web.ViewModels.Home;
 using Microsoft.AspNetCore.Http;
@@ -26,11 +27,16 @@ namespace DotaESport.Web.Controllers
 
             var viewModel = new IndexViewModel
             {
-                Articles = 
-                    this.articlesService.GetAll<IndexArticleViewModel>(),
+                Articles =
+                    this.articlesService.GetAll<IndexArticleViewModel>(4),
             };
 
             return this.View(viewModel);
+
+            foreach (var article in viewModel.Articles.Select((value, index) => new {value,index}))
+            {
+
+            }
         }
 
 
