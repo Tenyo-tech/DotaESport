@@ -1,4 +1,8 @@
-﻿namespace DotaESport.Web.Controllers
+﻿using DotaESport.Data.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+
+namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -12,10 +16,12 @@
     public class ArticlesController : BaseController
     {
         private readonly IArticlesService articlesService;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public ArticlesController(IArticlesService articlesService)
+        public ArticlesController(IArticlesService articlesService,UserManager<ApplicationUser> userManager)
         {
             this.articlesService = articlesService;
+            this.userManager = userManager;
         }
 
         public IActionResult ById(int id)
@@ -27,6 +33,28 @@
             }
 
             return this.View(articleViewModel);
+        }
+
+
+        public IActionResult Create()
+        {
+            var viewModel = new CreateArticleViewModel();
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Create(CreateArticleViewModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
+            var user = await this.userManager.GetUserAsync(this.User);
+            var articleId = await this.articlesService.CreateAsync(input, user.Id);
+            this.TempData["InfoMessage"] = "Article created!";
+            return this.RedirectToAction(nameof(this.ById), new {id = articleId});
         }
     }
 }
