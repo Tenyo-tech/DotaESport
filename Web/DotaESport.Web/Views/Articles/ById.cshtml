@@ -5,6 +5,10 @@
     this.ViewData["Title"] = "Home Page";
 }
 
-<h1>@Model.Title</h1>
-
-@Model.Content
+    <div  class="text-white text-opacity">
+        <h1>@Model.Title</h1>
+        <div>
+            <img src="@Model.ImgUrl"/>
+        </div>
+            @Html.Raw(Model.SanitizedContent)
+    </div>

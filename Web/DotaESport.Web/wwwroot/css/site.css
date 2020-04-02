@@ -99,8 +99,8 @@ body, html {
 }
 
 .bg-DotA {
-    background-image: url(../images/invoker.jpg);
-    background-color: #cccccc;
+    background-image: url(https://wallpaperaccess.com/full/1719375.jpg);
+    background-color: #000000;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,4 +108,30 @@ body, html {
 
 .text-opacity {
     background: rgba(0, 0, 0, 0.3);
+}
+
+#columnHeader {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0px 14px 0px;
+}
+
+#columnHeaderTextStr, #columnHeaderTextAgi, #columnHeaderTextInt {
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_str.png');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding: 6px 10px 15px 40px;
+    overflow: visible;
+    text-transform: uppercase;
+    color: #616363;
+    font-size: 16px;
+    font-family: KoreanFont,georgia,serif;
+}
+
+#columnHeaderTextAgi {
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_agi.png');
+}
+
+#columnHeaderTextInt {
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_int.png');
 }
