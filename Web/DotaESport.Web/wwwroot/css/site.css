@@ -58,17 +58,15 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
-.heroContainer {
+.heroContainer
+
+{
     width: 23%;
     display: inline-block;
 }
 
 .HeroImage {
     max-width: 50px;
-}
-
-.HeroText {
-    font-size: 12px;
 }
 
 .img-responsive {
@@ -80,10 +78,6 @@ body {
 
 .carousel-inner img {
     width: 100%;
-    height: 100%;
-}
-
-body, html {
     height: 100%;
 }
 
