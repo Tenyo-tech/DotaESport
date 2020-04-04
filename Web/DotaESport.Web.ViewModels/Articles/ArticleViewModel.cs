@@ -11,7 +11,7 @@ namespace DotaESport.Web.ViewModels.Articles
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
 
-    public class ArticleViewModel : IMapFrom<Article>, IMapTo<Article>
+    public class ArticleViewModel : IMapFrom<Article>, IMapTo<Article>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -32,5 +32,12 @@ namespace DotaESport.Web.ViewModels.Articles
         public int VotesCount { get; set; }
 
         public IEnumerable<ArticleCommentViewModel> Comments { get; set; }
+
+        public void CreateMappings(IProfileExpression configuration)
+        {
+            configuration.CreateMap<Article, ArticleViewModel>()
+                .ForMember(x => x.VotesCount, options => { options.MapFrom(a => a.Votes
+                    .Sum(v => (int) v.Type)); });
+        }
     }
 }

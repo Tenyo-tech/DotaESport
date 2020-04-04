@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Web
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace DotaESport.Web
 {
     using System.Reflection;
 
@@ -48,7 +50,16 @@
 
             services.AddAuthentication().AddSteam();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options =>
+                {
+                    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+                });
+
+            services.AddAntiforgery(options =>
+            {
+                options.HeaderName = "X-CSRF-TOKEN";
+            });
+
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);
@@ -60,10 +71,13 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
+
             services.AddTransient<ISettingsService, SettingsService>();
 
             services.AddTransient<IHeroService, HeroService>();
             services.AddTransient<IArticlesService, ArticlesService>();
+            services.AddTransient<IVotesServices, VotesService>();
+            services.AddTransient<ICommentsService, CommentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

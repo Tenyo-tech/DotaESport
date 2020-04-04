@@ -28,6 +28,7 @@
                                     <i class="fa fa-thumbs-down"></i>
                                 </a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -49,3 +50,24 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+
+        function sendVote(articleId, isUpVote) {
+            var token = $("#votesForm input[name=__RequestVerificationToken]").val();
+            var json = { articleId: articleId, isUpVote: isUpVote };
+            $.ajax({
+                url: "/api/votes",
+                type: "POST",
+                data: JSON.stringify(json),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (data) {
+                    $("#votesCount").html(data.votesCount);
+                }
+            });
+        }
+    </script>
+}
