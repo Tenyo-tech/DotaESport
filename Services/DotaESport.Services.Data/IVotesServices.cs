@@ -7,6 +7,8 @@ namespace DotaESport.Services.Data
 {
     public interface IVotesServices
     {
-        Task VoteAsync(int postId, string userId, bool IsUpVote);
+        Task VoteAsync(int articleId, string userId, bool IsUpVote);
+
+        int GetVotes(int articleId);
     }
 }
