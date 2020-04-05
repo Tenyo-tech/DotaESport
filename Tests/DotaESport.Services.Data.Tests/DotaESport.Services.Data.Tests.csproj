@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="Moq" Version="4.13.1" />
@@ -29,6 +30,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\DotaESport.Data\DotaESport.Data.csproj" />
     <ProjectReference Include="..\..\Services\DotaESport.Services.Data\DotaESport.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Web\DotaESport.Web\DotaESport.Web.csproj" />
   </ItemGroup>
 
 </Project>
