@@ -24,7 +24,7 @@
 </head>
 <body class="bg-DotA">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom box-shadow mb-3 position-sticky">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom box-shadow mb-3 sticky-top">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="http://cdn.dota2.com/apps/dota2/images/nav/logo.png" alt="logo">
@@ -36,15 +36,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Heroes" asp-action="All">Heroes</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Dota Gamepedia
+                            </a>
+                            <div class="dropdown-menu bg-dark">
+                                <a class="nav-link" asp-area="" asp-controller="Heroes" asp-action="All">Heroes</a>
+                                <a class="nav-link" href="#">Items</a>
+                                <a class="nav-link" href="http://www.dota2.com/patches">Gameplay updates</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Items</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tournaments</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                DotaESports
+                            </a>
+                            <div class="dropdown-menu bg-dark">
+                                <a class="nav-link" asp-area="" asp-controller="Teams" asp-action="">Teams</a>
+                                <a class="nav-link" asp-area="" asp-controller="Players" asp-action="">Players</a>
+                                <a class="nav-link" asp-area="" asp-controller="Tournaments" asp-action="">Tournaments</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

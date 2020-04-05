@@ -3393,7 +3393,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #b9bbbe;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -3401,7 +3401,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: #1e90ff;
   text-decoration: none;
   background-color: #f8f9fa;
 }
