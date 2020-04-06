@@ -27,10 +27,10 @@ namespace DotaESport.Web.Controllers
 
         public IActionResult News(int page = 1)
         {
-            var viewModel = new IndexViewModel
+            var viewModel = new NewsViewModel
             {
                 Articles =
-                    this.articlesService.GetAll<IndexArticleViewModel>(4),
+                    this.articlesService.GetAll<ArticleInNewsViewModel>(),
             };
 
             return this.View(viewModel);

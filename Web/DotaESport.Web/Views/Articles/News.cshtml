@@ -1,0 +1,26 @@
+﻿@using DotaESport.Common
+@model DotaESport.Web.ViewModels.Articles.NewsViewModel
+@{
+    this.ViewData["Title"] = "Home Page";
+}
+
+<h1 class="display-3">Latest News</h1>
+
+@foreach (var article in Model.Articles)
+{
+    <div class="media-body">
+        <h4 class="media-heading"><a asp-controller="Articles" asp-action="ById" asp-route-id="@article.Id">@article.Title</a></h4>
+        <p>@article.ShortContent</p>
+        <ul class="list-inline list-unstyled text-right">
+            <li class="list-inline-item">
+                <i class="fas fa-user-edit"></i> @article.UserUserName
+            </li>
+            <li class="list-inline-item">
+                <i class="fas fa-calendar-alt"></i> @article.CreatedOn
+            </li>
+            <li class="list-inline-item">
+                <i class="fas fa-comment-dots"></i> @article.CommentsCount comments
+            </li>
+        </ul>
+    </div>
+}

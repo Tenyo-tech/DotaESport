@@ -19,7 +19,5 @@ namespace DotaESport.Web.ViewModels.Home
         public string Content { get; set; }
 
         public int PostsCount { get; set; }
-
-        public string Url => $"/d/{this.Title.Replace(' ', '-')}";
     }
 }

@@ -24,7 +24,7 @@ namespace DotaESport.Services.Data
         public IEnumerable<T> GetAll<T>(int? count = null)
         {
             IQueryable<Article> query =
-                this.articleRepository.All().OrderBy(x => x.Title);
+                this.articleRepository.All().OrderByDescending(x => x.CreatedOn);
             if (count.HasValue)
             {
                 query = query.Take(count.Value);
@@ -37,10 +37,9 @@ namespace DotaESport.Services.Data
         {
             var article = new Article
             {
+                ImgUrl = model.ImgUrl,
                 Title = model.Title,
                 Content = model.Content,
-                VideoUrl = model.VideoUrl,
-                ImgUrl = model.ImgUrl,
                 UserId = userId,
 
             };

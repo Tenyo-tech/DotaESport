@@ -14,9 +14,6 @@
         public string ImgUrl { get; set; }
 
         [Required]
-        public string VideoUrl { get; set; }
-
-        [Required]
         public string Title { get; set; }
 
         [Required]
