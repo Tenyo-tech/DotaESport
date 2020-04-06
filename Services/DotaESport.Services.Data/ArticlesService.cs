@@ -56,5 +56,6 @@ namespace DotaESport.Services.Data
                 .To<T>().FirstOrDefault();
             return article;
         }
+
     }
 }

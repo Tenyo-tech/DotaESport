@@ -1,4 +1,5 @@
 ﻿using DotaESport.Data.Models;
+using DotaESport.Web.ViewModels.Home;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
@@ -22,6 +23,17 @@ namespace DotaESport.Web.Controllers
         {
             this.articlesService = articlesService;
             this.userManager = userManager;
+        }
+
+        public IActionResult News(int page = 1)
+        {
+            var viewModel = new IndexViewModel
+            {
+                Articles =
+                    this.articlesService.GetAll<IndexArticleViewModel>(4),
+            };
+
+            return this.View(viewModel);
         }
 
         public IActionResult ById(int id)

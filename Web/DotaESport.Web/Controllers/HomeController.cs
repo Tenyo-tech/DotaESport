@@ -32,11 +32,6 @@ namespace DotaESport.Web.Controllers
             };
 
             return this.View(viewModel);
-
-            foreach (var article in viewModel.Articles.Select((value, index) => new {value,index}))
-            {
-
-            }
         }
 
 

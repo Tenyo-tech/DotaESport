@@ -14,5 +14,6 @@
         Task<int> CreateAsync(CreateArticleViewModel model, string userId);
 
         T GetById<T>(int id);
+
     }
 }
