@@ -15,5 +15,10 @@
 
         T GetById<T>(int id);
 
+        IEnumerable<T> GetArticlesByPage<T>(int? take = null, int skip = 0);
+
+
+        int GetCountOnAllArticles();
+
     }
 }

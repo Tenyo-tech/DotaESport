@@ -56,5 +56,22 @@ namespace DotaESport.Services.Data
             return article;
         }
 
+        public IEnumerable<T> GetArticlesByPage<T>(int? take = null, int skip = 0)
+        {
+            var articles = this.articleRepository.All()
+                .OrderByDescending(x => x.CreatedOn)
+                .Skip(skip);
+            if (take.HasValue)
+            {
+                articles = articles.Take(take.Value);
+            }
+
+            return articles.To<T>().ToList();
+        }
+
+        public int GetCountOnAllArticles()
+        {
+            return this.articleRepository.All().Count();
+        }
     }
 }

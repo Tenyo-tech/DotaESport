@@ -16,10 +16,12 @@ namespace DotaESport.Web.Controllers
 
     public class ArticlesController : BaseController
     {
+        private const int ItemsPerPage = 5;
+
         private readonly IArticlesService articlesService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public ArticlesController(IArticlesService articlesService,UserManager<ApplicationUser> userManager)
+        public ArticlesController(IArticlesService articlesService, UserManager<ApplicationUser> userManager)
         {
             this.articlesService = articlesService;
             this.userManager = userManager;
@@ -30,8 +32,18 @@ namespace DotaESport.Web.Controllers
             var viewModel = new NewsViewModel
             {
                 Articles =
-                    this.articlesService.GetAll<ArticleInNewsViewModel>(),
+                    this.articlesService.GetArticlesByPage<ArticlesInNewsViewModel>(ItemsPerPage, (page - 1) * ItemsPerPage),
             };
+
+            var count = this.articlesService.GetCountOnAllArticles();
+
+            viewModel.PagesCount = (int)Math.Ceiling((double)count / ItemsPerPage);
+            if (viewModel.PagesCount == 0)
+            {
+                viewModel.PagesCount = 1;
+            }
+
+            viewModel.CurrentPage = page;
 
             return this.View(viewModel);
         }
@@ -66,7 +78,7 @@ namespace DotaESport.Web.Controllers
             var user = await this.userManager.GetUserAsync(this.User);
             var articleId = await this.articlesService.CreateAsync(input, user.Id);
             this.TempData["InfoMessage"] = "Article created!";
-            return this.RedirectToAction(nameof(this.ById), new {id = articleId});
+            return this.RedirectToAction(nameof(this.ById), new { id = articleId });
         }
     }
 }

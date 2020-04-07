@@ -4,14 +4,14 @@
     this.ViewData["Title"] = "Home Page";
 }
 
-<h1 class="display-3">Latest News</h1>
+<h1 class="display-3 text-opacity text-white">Latest News</h1>
 
 @foreach (var article in Model.Articles)
 {
     <div class="media-body">
         <h4 class="media-heading"><a asp-controller="Articles" asp-action="ById" asp-route-id="@article.Id">@article.Title</a></h4>
-        <p>@article.ShortContent</p>
-        <ul class="list-inline list-unstyled text-right">
+        <p class="text-opacity text-white">@article.ShortContent</p>
+        <ul class="list-inline list-unstyled text-right text-white text-opacity">
             <li class="list-inline-item">
                 <i class="fas fa-user-edit"></i> @article.UserUserName
             </li>
@@ -24,3 +24,29 @@
         </ul>
     </div>
 }
+
+
+<nav>
+    <ul class="pagination justify-content-center">
+
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        @for (int i = 1; i <= this.Model.PagesCount; i++)
+        {
+            var active = i == this.Model.CurrentPage ? "active" : string.Empty;
+
+            <li class="page-item @active">
+                <a class="page-link" 
+                   asp-controller="Articles" 
+                   asp-action="News"
+                   asp-route-page="@i"
+                   >@i</a>
+            </li>
+        }
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+
+    </ul>
+</nav>

@@ -8,7 +8,7 @@ using DotaESport.Services.Mapping;
 
 namespace DotaESport.Web.ViewModels.Articles
 {
-    public class ArticleInNewsViewModel : IMapFrom<Article>
+    public class ArticlesInNewsViewModel : IMapFrom<Article>
     {
         public int Id { get; set; }
 

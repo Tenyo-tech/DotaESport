@@ -6,6 +6,10 @@ namespace DotaESport.Web.ViewModels.Articles
 {
     public class NewsViewModel
     {
-        public IEnumerable<ArticleInNewsViewModel> Articles { get; set; }
+        public int CurrentPage { get; set; }
+
+        public int PagesCount { get; set; }
+
+        public IEnumerable<ArticlesInNewsViewModel> Articles { get; set; }
     }
 }
