@@ -32,11 +32,11 @@
             await this.commentsRepository.SaveChangesAsync();
         }
 
-        public bool IsInPostId(int commentId, int postId)
+        public bool IsInArticleId(int commentId, int articleId)
         {
-            var commentPostId = this.commentsRepository.All().Where(x => x.Id == commentId)
+            var commentArticleId = this.commentsRepository.All().Where(x => x.Id == commentId)
                 .Select(x => x.ArticleId).FirstOrDefault();
-            return commentPostId == postId;
+            return commentArticleId == articleId;
         }
     }
 }

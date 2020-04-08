@@ -35,15 +35,15 @@ namespace DotaESport.Web.Controllers
 
             if (parentId.HasValue)
             {
-                if (!this.commentsService.IsInPostId(parentId.Value, input.PostId))
+                if (!this.commentsService.IsInArticleId(parentId.Value, input.ArticleId))
                 {
                     return this.BadRequest();
                 }
             }
 
             var userId = this.userManager.GetUserId(this.User);
-            await this.commentsService.Create(input.PostId, userId, input.Content, parentId);
-            return this.RedirectToAction("ById", "Articles", new { id = input.PostId });
+            await this.commentsService.Create(input.ArticleId, userId, input.Content, parentId);
+            return this.RedirectToAction("ById", "Articles", new { id = input.ArticleId });
         }
     }
 }

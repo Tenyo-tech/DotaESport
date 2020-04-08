@@ -2,7 +2,7 @@
 {
     public class CreateCommentInputModel
     {
-        public int PostId { get; set; }
+        public int ArticleId { get; set; }
 
         public int ParentId { get; set; }
 

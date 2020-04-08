@@ -123,10 +123,6 @@ namespace DotaESport.Web
                 endpoints =>
                     {
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                        endpoints.MapControllerRoute(
-                            "DotaESportArticles",
-                            "d/{title:minlength(3)}",
-                            new { controller = "Articles", action = "ByTitle" });
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
                     });

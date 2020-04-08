@@ -9,6 +9,6 @@
     {
         Task Create(int postId, string userId, string content, int? parentId = null);
 
-        bool IsInPostId(int commentId, int postId);
+        bool IsInArticleId(int commentId, int postId);
     }
 }
