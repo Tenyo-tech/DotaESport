@@ -61,6 +61,8 @@ namespace DotaESport.Web
 
             });
 
+            services.AddSignalR();
+
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);
@@ -122,6 +124,7 @@ namespace DotaESport.Web
             app.UseEndpoints(
                 endpoints =>
                     {
+                        endpoints.MapHub<CoffeeHub>("/")
                         endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                         endpoints.MapRazorPages();
