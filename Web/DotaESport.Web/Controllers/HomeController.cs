@@ -2,6 +2,7 @@
 using DotaESport.Services.Data;
 using DotaESport.Web.ViewModels.Administration.Dashboard;
 using DotaESport.Web.ViewModels.Home;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using IndexViewModel = DotaESport.Web.ViewModels.Home.IndexViewModel;
 
@@ -32,6 +33,12 @@ namespace DotaESport.Web.Controllers
             };
 
             return this.View(viewModel);
+        }
+
+        [Authorize]
+        public IActionResult Chat()
+        {
+            return this.View();
         }
 
 

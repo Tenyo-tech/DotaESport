@@ -64,6 +64,13 @@
                                 <a class="nav-link" asp-area="" asp-controller="Tournaments" asp-action="">Tournaments</a>
                             </div>
                         </li>
+                        <li>
+                            <div class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Chat">
+                                    DotA Chat
+                                </a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -89,6 +96,7 @@
         <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js" asp-append-version="true"></script>
         <script src="~/lib/moment/min/moment-with-locales.min.js" asp-append-version="true"></script>
+        <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -97,6 +105,7 @@
         <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
         <script src="~/lib/moment/min/moment-with-locales.min.js" asp-append-version="true"></script>
+        <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
