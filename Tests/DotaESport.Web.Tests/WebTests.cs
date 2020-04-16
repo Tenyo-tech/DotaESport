@@ -33,5 +33,7 @@
             var response = await client.GetAsync("Identity/Account/Manage");
             Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
         }
+
+
     }
 }
