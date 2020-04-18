@@ -14,6 +14,10 @@ namespace DotaESport.Services.Data
 
     public class ArticlesService : IArticlesService
     {
+        private const string NullOrEmptyImgURLErrorMessage = "Article Image URL is null or empty.";
+        private const string NullOrEmptyTitleErrorMessage = "Article Title is null or empty.";
+        private const string NullOrEmptyContentErrorMessage = "Article Content is null or empty.";
+
         private readonly IDeletableEntityRepository<Article> articleRepository;
 
         public ArticlesService(IDeletableEntityRepository<Article> articleRepository)
@@ -33,13 +37,26 @@ namespace DotaESport.Services.Data
             return query.To<T>().ToList();
         }
 
-        public async Task<int> CreateAsync(CreateArticleViewModel model, string userId)
+        public async Task<int> CreateAsync(CreateArticleViewModel input, string userId)
         {
+            if (string.IsNullOrEmpty(input.ImgUrl) || string.IsNullOrWhiteSpace(input.ImgUrl))
+            {
+                throw new ArgumentNullException(NullOrEmptyImgURLErrorMessage);
+            }
+            if (string.IsNullOrEmpty(input.Title) || string.IsNullOrWhiteSpace(input.Title))
+            {
+                throw new ArgumentNullException(NullOrEmptyTitleErrorMessage);
+            }
+            if (string.IsNullOrEmpty(input.Content) || string.IsNullOrWhiteSpace(input.Content))
+            {
+                throw new ArgumentNullException(NullOrEmptyContentErrorMessage);
+            }
+
             var article = new Article
             {
-                ImgUrl = model.ImgUrl,
-                Title = model.Title,
-                Content = model.Content,
+                ImgUrl = input.ImgUrl,
+                Title = input.Title,
+                Content = input.Content,
                 UserId = userId,
 
             };

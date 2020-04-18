@@ -15,12 +15,15 @@
             this.Votes = new HashSet<Vote>();
         }
 
+        [Required]
         public string ImgUrl { get; set; }
 
         public string VideoUrl { get; set; }
 
+        [Required]
         public string Title { get; set; }
 
+        [Required]
         public string Content { get; set; }
 
         [Required]

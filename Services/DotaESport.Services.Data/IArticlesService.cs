@@ -11,7 +11,7 @@
     {
         IEnumerable<T> GetAll<T>(int? count = null);
 
-        Task<int> CreateAsync(CreateArticleViewModel model, string userId);
+        Task<int> CreateAsync(CreateArticleViewModel input, string userId);
 
         T GetById<T>(int id);
 

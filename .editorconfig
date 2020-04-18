@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS0183: 'is' expression's given expression is always of the provided type
+dotnet_diagnostic.CS0183.severity = suggestion
+
+# IDE0058: Expression value is never used
+csharp_style_unused_value_expression_statement_preference = unused_local_variable:silent
