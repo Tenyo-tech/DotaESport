@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DotaESport.Web;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
-namespace DotaESport.Services.Data.Tests
+namespace DotaESport.Services.Data.Tests.PagesTests
 {
     public class HomePageTests
     {

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using DotaESport.Data;
 using DotaESport.Data.Models;
 using DotaESport.Data.Repositories;
 using DotaESport.Services.Data.Tests.Common;
@@ -14,11 +12,10 @@ using DotaESport.Web.ViewModels;
 using DotaESport.Web.ViewModels.Articles;
 using DotaESport.Web.ViewModels.Home;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Moq;
 using Xunit;
 
-namespace DotaESport.Services.Data.Tests
+namespace DotaESport.Services.Data.Tests.ServicesTests
 {
     public class ArticlesServiceTests
     {

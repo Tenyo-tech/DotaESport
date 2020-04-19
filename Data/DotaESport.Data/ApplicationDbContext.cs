@@ -34,6 +34,16 @@
 
         public DbSet<HeroAbility> HeroAbilities { get; set; }
 
+        public DbSet<Item> Items { get; set; }
+
+        public DbSet<Player> Players { get; set; }
+
+        public DbSet<Team> Teams { get; set; }
+
+        public DbSet<Tournament> Tournaments { get; set; }
+
+        public DbSet<TournamentResult> Results { get; set; }
+
         public DbSet<Setting> Settings { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
@@ -106,6 +116,7 @@
                 .HasForeignKey(e => e.UserId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
+
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)
