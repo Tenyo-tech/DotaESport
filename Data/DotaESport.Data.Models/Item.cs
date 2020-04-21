@@ -1,12 +1,11 @@
-﻿using DotaESport.Data.Models.Enums;
-
-namespace DotaESport.Data.Models
+﻿namespace DotaESport.Data.Models
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
     using DotaESport.Data.Common.Models;
+    using DotaESport.Data.Models.Enums;
 
     public class Item : BaseDeletableModel<int>
     {
@@ -14,13 +13,13 @@ namespace DotaESport.Data.Models
 
         public string ItemImage { get; set; }
 
-        public ItemType Type { get; set; }
+        public ItemType ItemType { get; set; }
 
         public BasicItemType? BasicItemType { get; set; }
 
-        public UpgradeItemType? ItemType { get; set; }
+        public UpgradeItemType? UpgradeItemType { get; set; }
 
-        public NeutralItemTier? ItemTier { get; set; }
+        public NeutralItemTier? NeutralItemTier { get; set; }
 
         public int ItemGoldPrice { get; set; }
 
@@ -35,8 +34,5 @@ namespace DotaESport.Data.Models
         public int? Cooldown { get; set; }
 
         public int? ManaCost { get; set; }
-
-        public IEnumerable<Item> Recipe { get; set; }
-
     }
 }

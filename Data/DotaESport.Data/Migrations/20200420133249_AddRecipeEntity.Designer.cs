@@ -4,14 +4,16 @@ using DotaESport.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotaESport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200420133249_AddRecipeEntity")]
+    partial class AddRecipeEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -362,12 +364,17 @@ namespace DotaESport.Data.Migrations
                     b.Property<int?>("NeutralItemTier")
                         .HasColumnType("int");
 
+                    b.Property<int?>("RecipeId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("UpgradeItemType")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
+
+                    b.HasIndex("RecipeId");
 
                     b.ToTable("Items");
                 });
@@ -419,6 +426,35 @@ namespace DotaESport.Data.Migrations
                     b.HasIndex("TeamId");
 
                     b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("DotaESport.Data.Models.Recipe", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Recipe");
                 });
 
             modelBuilder.Entity("DotaESport.Data.Models.Setting", b =>
@@ -770,6 +806,13 @@ namespace DotaESport.Data.Migrations
                     b.HasOne("DotaESport.Data.Models.Hero", "Hero")
                         .WithMany("HeroAbilities")
                         .HasForeignKey("HeroId");
+                });
+
+            modelBuilder.Entity("DotaESport.Data.Models.Item", b =>
+                {
+                    b.HasOne("DotaESport.Data.Models.Recipe", "Recipe")
+                        .WithMany("items")
+                        .HasForeignKey("RecipeId");
                 });
 
             modelBuilder.Entity("DotaESport.Data.Models.Player", b =>
