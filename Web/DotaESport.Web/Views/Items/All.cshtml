@@ -1,0 +1,82 @@
+﻿
+
+@using DotaESport.Web.ViewModels.Items
+@model IEnumerable<DotaESport.Web.ViewModels.Items.AllItemsViewModel>
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@using DotaESport.Common
+@using DotaESport.Data.Models
+@using DotaESport.Data.Models.Enums
+@using Microsoft.AspNetCore.Identity
+@{
+    this.ViewData["Title"] = "All Items";
+}
+
+@if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+{
+    <a class="btn btn-primary" asp-area="Administration" asp-controller="Items" asp-action="AddItem">Add Item</a>
+}
+<br/>
+
+<div class="row">
+    <div class="col">
+        <h3 class="text-opacity text-white">Consumables</h3>
+        @foreach (var item in Model.OrderBy(x => x.CreatedOn))
+        {
+            @if (item.ItemType == ItemType.Basics 
+                 && item.BasicItemType == BasicItemType.Consumables)
+            {
+                <img src="@item.ItemImage" class="align-content-center" alt="Avatar">
+            }
+        }
+    </div>
+    <div class="col">
+        <h3 class="text-opacity text-white">Attributes</h3>
+        @foreach (var item in Model.OrderBy(x => x.CreatedOn))
+        {
+            @if (item.ItemType == ItemType.Basics 
+                 && item.BasicItemType == BasicItemType.Attributes)
+            {
+                <img src="@item.ItemImage" alt="Avatar">
+            }
+        }
+    </div>
+    <div class="col">
+        <h3 class="text-opacity text-white">Equipment</h3>
+        @foreach (var item in Model.OrderBy(x => x.CreatedOn))
+        {
+            @if (item.ItemType == ItemType.Basics 
+                 && item.BasicItemType == BasicItemType.Equipment)
+            {
+                <img src="@item.ItemImage" alt="Avatar">
+            }
+        }
+    </div>
+    <div class="col">
+        <h3 class="text-opacity text-white">Miscellaneous</h3>
+        @foreach (var item in Model.OrderBy(x => x.CreatedOn))
+        {
+            @if (item.ItemType == ItemType.Basics 
+                 && item.BasicItemType == BasicItemType.Miscellaneous)
+            {
+                <img src="@item.ItemImage" alt="Avatar">
+            }
+        }
+    </div>
+    <div class="col">
+        <h3 class="text-opacity text-white">Secret Shop</h3>
+        @foreach (var item in Model.OrderBy(x => x.CreatedOn))
+        {
+            @if (item.ItemType == ItemType.Basics 
+                 && item.BasicItemType == BasicItemType.Secret)
+            {
+                <img src="@item.ItemImage" alt="Avatar">
+            }
+        }
+    </div>
+</div>
+
+
+
+

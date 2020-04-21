@@ -8,6 +8,10 @@ function takeName(nameHero) {
     document.getElementById("heroName").innerHTML = nameHero;
 }
 
+function generateMenu(nameHero) {
+    document.get
+}
+
 $(function () {
     $("time").each(function (i, e) {
         const dateTimeValue = $(e).attr("datetime");

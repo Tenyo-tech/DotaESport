@@ -1,0 +1,81 @@
+﻿@model DotaESport.Web.ViewModels.Items.AddItemInputModel
+@using DotaESport.Common
+@using DotaESport.Data.Models.Enums
+@{
+    this.ViewData["Title"] = "Add Items";
+}
+
+<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "image paste table link code media"
+        ]
+    });
+</script>
+
+<form method="post" class="text-white col-md-6" asp-action="AddItem">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="ItemImage">Item Image</label>
+        <input asp-for="ItemImage" class="form-control" />
+        <span asp-validation-for="ItemType" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="ItemType"></label>
+        <select id="ItemType" asp-for="ItemType" asp-items="Html.GetEnumSelectList<ItemType>()" class="form-control"></select>
+        <span asp-validation-for="ItemType" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="BasicItemType"></label>
+        <select asp-for="BasicItemType" asp-items="Html.GetEnumSelectList<BasicItemType>()" class="form-control"></select>
+        <span asp-validation-for="BasicItemType" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="UpgradeItemType"></label>
+        <select asp-for="UpgradeItemType" asp-items="Html.GetEnumSelectList<UpgradeItemType>()" class="form-control"></select>
+        <span asp-validation-for="UpgradeItemType" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="ItemGoldPrice">Gold</label>
+        <input asp-for="ItemGoldPrice" class="form-control" />
+        <span asp-validation-for="ItemGoldPrice" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="DescriptionTitle">Title</label>
+        <input asp-for="DescriptionTitle" class="form-control" />
+        <span asp-validation-for="DescriptionTitle" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Hint"></label>
+        <input asp-for="Hint" class="form-control" />
+        <span asp-validation-for="Hint" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Lore"></label>
+        <input asp-for="Lore" class="form-control" />
+        <span asp-validation-for="Lore" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Cooldown">CoolDown</label>
+        <input asp-for="Cooldown" class="form-control" />
+        <span asp-validation-for="Cooldown" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="ManaCost">Mana cost</label>
+        <input asp-for="ManaCost" class="form-control" />
+        <span asp-validation-for="ManaCost" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
