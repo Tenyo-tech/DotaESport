@@ -27,6 +27,7 @@ namespace DotaESport.Services.Data
             {
                 Name = model.Name,
                 ItemImage = model.ItemImage,
+                ItemBigImage = model.ItemBigImage,
                 ItemType = model.ItemType,
                 BasicItemType = model.BasicItemType,
                 UpgradeItemType = model.UpgradeItemType,
@@ -56,5 +57,11 @@ namespace DotaESport.Services.Data
             return query.To<T>().ToList();
         }
 
+        public T GetById<T>(int id)
+        {
+            var item = this.itemRepository.All().Where(x => x.Id == id)
+                .To<T>().FirstOrDefault();
+            return item;
+        }
     }
 }

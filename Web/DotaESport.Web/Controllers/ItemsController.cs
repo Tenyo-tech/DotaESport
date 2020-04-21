@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Web.Controllers
+﻿using DotaESport.Web.ViewModels.Articles;
+
+namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -25,5 +27,16 @@
             return this.View(viewModel);
         }
 
+        public IActionResult ById(int id)
+        {
+            var itemViewModel = this.itemsService.GetById<ItemViewModel>(id);
+
+            if (itemViewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(itemViewModel);
+        }
     }
 }

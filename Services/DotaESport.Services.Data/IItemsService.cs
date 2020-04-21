@@ -11,5 +11,7 @@ namespace DotaESport.Services.Data
         Task AddItemAsync(AddItemInputModel model);
 
         IEnumerable<T> GetAllItems<T>(int? count = null);
+
+        T GetById<T>(int id);
     }
 }

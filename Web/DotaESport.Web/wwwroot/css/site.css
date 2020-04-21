@@ -101,6 +101,7 @@ body {
 }
 
 .text-opacity {
+    color: goldenrod;
     background: rgba(0, 0, 0, 0.3);
 }
 
@@ -128,6 +129,18 @@ body {
 
 #columnHeaderTextInt {
     background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_int.png');
+}
+
+
+#ItemImage {
+    float: left;
+    clear: both;
+    width: 182px;
+    height: 138px;
+    border: solid #242424 3px;
+    margin-right: 10px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 

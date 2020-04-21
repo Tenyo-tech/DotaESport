@@ -27,6 +27,11 @@
         <span asp-validation-for="ItemType" class="text-danger"></span>
     </div>
     <div>
+        <label asp-for="ItemBigImage">Item big image</label>
+        <input asp-for="ItemBigImage" class="form-control" />
+        <span asp-validation-for="ItemBigImage" class="text-danger"></span>
+    </div>
+    <div>
         <label asp-for="ItemType"></label>
         <select id="ItemType" asp-for="ItemType" asp-items="Html.GetEnumSelectList<ItemType>()" class="form-control"></select>
         <span asp-validation-for="ItemType" class="text-danger"></span>

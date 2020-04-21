@@ -10,9 +10,13 @@
 
     public class AllItemsViewModel : IMapFrom<Item>
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string ItemImage { get; set; }
+
+        public string ItemBigImage { get; set; }
 
         public ItemType ItemType { get; set; }
 

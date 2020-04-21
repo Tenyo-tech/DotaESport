@@ -8,8 +8,13 @@ function takeName(nameHero) {
     document.getElementById("heroName").innerHTML = nameHero;
 }
 
-function generateMenu(nameHero) {
-    document.get
+function takeInfo(itemName, itemGold, itemImage) {
+    document.getElementById("ItemName").innerHTML = itemName;
+    document.getElementById("ItemGold").innerHTML = itemGold;
+    document.getElementById("ItemImage").src = itemImage; 
+
+    document.getElementById("ItemsTitle").style.display = "none";
+    document.getElementById("ById").style.display = "block";
 }
 
 $(function () {

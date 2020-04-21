@@ -17,6 +17,8 @@
         [Required]
         public string ItemImage { get; set; }
 
+        public string ItemBigImage { get; set; }
+
         public ItemType ItemType { get; set; }
 
         public BasicItemType? BasicItemType { get; set; }
