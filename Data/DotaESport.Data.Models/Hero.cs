@@ -14,6 +14,5 @@
 
         public string MainAttribute { get; set; }
 
-        public ICollection<HeroAbility> HeroAbilities { get; set; }
     }
 }
