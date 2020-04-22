@@ -8,10 +8,16 @@ function takeName(nameHero) {
     document.getElementById("heroName").innerHTML = nameHero;
 }
 
-function takeInfo(itemName, itemGold, itemImage) {
+function takeInfo(itemName, itemGold, itemImage2, lore, descrTitle,description,cooldown,manacost) {
     document.getElementById("ItemName").innerHTML = itemName;
     document.getElementById("ItemGold").innerHTML = itemGold;
-    document.getElementById("ItemImage").src = itemImage; 
+    document.getElementById("ItemImage2").src = itemImage2; 
+    document.getElementById("Lore").innerHTML = lore;
+    document.getElementById("DescrTitle").innerHTML = descrTitle;
+    document.getElementById("Description").innerHTML = description;
+    document.getElementById("Cooldown").innerHTML = cooldown;
+    document.getElementById("ManaCost").innerHTML = manacost;
+
 
     document.getElementById("ItemsTitle").style.display = "none";
     document.getElementById("ById").style.display = "block";

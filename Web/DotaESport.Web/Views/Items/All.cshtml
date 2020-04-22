@@ -17,10 +17,10 @@
     <a class="btn btn-primary" asp-area="Administration" asp-controller="Items" asp-action="AddItem">Add Item</a>
 }
 <br />
-<hr/>
+<hr />
 <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8 bg-dark">
+    <div class="col-1"></div>
+    <div class="col-10 bg-dark2">
         <div id="ItemsTitle">
             <h1 class="text-center text-warning">ITEMS</h1>
         </div>
@@ -30,21 +30,26 @@
                 <div class="row">
                     <div class="col-1"><img src="http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png" /></div>
                     <div id="ItemGold" class="text-warning col-1"></div>
-                    <hr/>
-                    <div> <img id="ItemImage" /></div>
-                    <hr/>
+                    <hr />
+                    <div> <img id="ItemImage2" /></div>
+                    <hr />
                 </div>
             </div>
             <div class="row">
-                <div class="col p-1" id="Lore"></div>
-                <div class="col" id="DescrTitle"></div>
-                <div class="col" id="Description"></div>
-                <div class="col" id="Cooldown"></div>
-                <div class="col" id="ManaCost"></div>
+                <div class="col-4 p-1 text-secondary" id="Lore"></div>
+                <div class="col-4 text-white">
+                    <div class="h3" id="DescrTitle"></div>
+                    <div id="Description"></div>
+                </div>
+                <div class="col"><br /> <img src="http://cdn.dota2.com/apps/dota2/images/tooltips/cooldown.png" alt="Cooldown" /><div id="Cooldown" class="text-white"></div></div>
+                <div class="col">
+                    <br />
+                    <img src="http://cdn.dota2.com/apps/dota2/images/tooltips/mana.png" alt="mana cost" /> <div class="text-primary" id="ManaCost"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-2"></div>
+    <div class="col-1"></div>
 
     <div class="row">
         <div class="col">
@@ -52,9 +57,17 @@
             @foreach (var item in Model.OrderBy(x => x.CreatedOn))
             {
                 @if (item.ItemType == ItemType.Basics
-                    && item.BasicItemType == BasicItemType.Consumables)
+               && item.BasicItemType == BasicItemType.Consumables)
                 {
-                    <img src="@item.ItemImage" alt="Avatar" onclick="takeInfo('@item.Name', '@item.ItemGoldPrice', '@item.ItemBigImage')">
+                    if (item.ManaCost == null)
+                    {
+                        item.ManaCost = 0;
+                    }
+                    if (item.Cooldown == null)
+                    {
+                        item.Cooldown = 0;
+                    }
+                    <img src="@item.ItemImage" alt="Avatar" onclick="takeInfo('@item.Name', '@item.ItemGoldPrice', '@item.ItemBigImage','@item.Lore','@item.DescriptionTitle', '@item.Description','@item.Cooldown','@item.ManaCost')">
                 }
             }
         </div>
@@ -65,7 +78,15 @@
                 @if (item.ItemType == ItemType.Basics
                     && item.BasicItemType == BasicItemType.Attributes)
                 {
-                    <img src="@item.ItemImage" alt="Avatar">
+                    if (item.ManaCost == null)
+                    {
+                        item.ManaCost = 0;
+                    }
+                    if (item.Cooldown == null)
+                    {
+                        item.Cooldown = 0;
+                    }
+                    <img src="@item.ItemImage" alt="Avatar" onclick="takeInfo('@item.Name', '@item.ItemGoldPrice', '@item.ItemBigImage','@item.Lore','@item.DescriptionTitle', '@item.Description','@item.Cooldown','@item.ManaCost')">
                 }
             }
         </div>
@@ -76,7 +97,15 @@
                 @if (item.ItemType == ItemType.Basics
                     && item.BasicItemType == BasicItemType.Equipment)
                 {
-                    <img src="@item.ItemImage" alt="Avatar">
+                    if (item.ManaCost == null)
+                    {
+                        item.ManaCost = 0;
+                    }
+                    if (item.Cooldown == null)
+                    {
+                        item.Cooldown = 0;
+                    }
+                    <img src="@item.ItemImage" alt="Avatar" onclick="takeInfo('@item.Name', '@item.ItemGoldPrice', '@item.ItemBigImage','@item.Lore','@item.DescriptionTitle', '@item.Description','@item.Cooldown','@item.ManaCost')">
                 }
             }
         </div>
@@ -85,9 +114,17 @@
             @foreach (var item in Model.OrderBy(x => x.CreatedOn))
             {
                 @if (item.ItemType == ItemType.Basics
-                    && item.BasicItemType == BasicItemType.Miscellaneous)
+                     && item.BasicItemType == BasicItemType.Miscellaneous)
                 {
-                    <img src="@item.ItemImage" alt="Avatar">
+                    if (item.ManaCost == null)
+                    {
+                        item.ManaCost = 0;
+                    }
+                    if (item.Cooldown == null)
+                    {
+                        item.Cooldown = 0;
+                    }
+                    <img src="@item.ItemImage" alt="Avatar" onclick="takeInfo('@item.Name', '@item.ItemGoldPrice', '@item.ItemBigImage','@item.Lore','@item.DescriptionTitle', '@item.Description','@item.Cooldown','@item.ManaCost')">
                 }
             }
         </div>
@@ -96,9 +133,17 @@
             @foreach (var item in Model.OrderBy(x => x.CreatedOn))
             {
                 @if (item.ItemType == ItemType.Basics
-                    && item.BasicItemType == BasicItemType.Secret)
+                     && item.BasicItemType == BasicItemType.Secret)
                 {
-                    <img src="@item.ItemImage" alt="Avatar">
+                    if (item.ManaCost == null)
+                    {
+                        item.ManaCost = 0;
+                    }
+                    if (item.Cooldown == null)
+                    {
+                        item.Cooldown = 0;
+                    }
+                    <img src="@item.ItemImage" alt="Avatar" onclick="takeInfo('@item.Name', '@item.ItemGoldPrice', '@item.ItemBigImage','@item.Lore','@item.DescriptionTitle', '@item.Description','@item.Cooldown','@item.ManaCost')">
                 }
             }
         </div>

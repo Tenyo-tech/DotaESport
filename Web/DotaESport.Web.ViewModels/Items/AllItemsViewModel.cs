@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Web.ViewModels.Items
+﻿using Ganss.XSS;
+
+namespace DotaESport.Web.ViewModels.Items
 {
     using System;
     using System.Collections.Generic;
@@ -31,6 +33,8 @@
         public string DescriptionTitle { get; set; }
 
         public string Description { get; set; }
+
+        public string SanitizedDescription => new HtmlSanitizer().Sanitize(this.Description);
 
         public string Hint { get; set; }
 
