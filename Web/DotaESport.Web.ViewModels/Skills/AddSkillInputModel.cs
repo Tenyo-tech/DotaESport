@@ -1,13 +1,13 @@
-﻿namespace DotaESport.Data.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using DotaESport.Data.Models;
+using DotaESport.Data.Models.Enums;
+using DotaESport.Services.Mapping;
+
+namespace DotaESport.Web.ViewModels.Skills
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    using DotaESport.Data.Common.Models;
-    using DotaESport.Data.Models.Enums;
-
-    public class Skill : BaseDeletableModel<int>
+    public class AddSkillInputModel : IMapTo<Skill>
     {
         public string Name { get; set; }
 
@@ -27,8 +27,5 @@
 
         public string ManaCost { get; set; }
 
-        public int HeroInfoId { get; set; }
-
-        public HeroInfo HeroInfo { get; set; }
     }
 }

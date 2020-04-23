@@ -10,6 +10,15 @@
 <br>
 <br>
 
+@if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+{
+<div class="row">
+    <div class="col text-center">
+        <a class="btn btn-primary" asp-area="Administration" asp-controller="Heroes" asp-action="Add">Add Hero</a>
+    </div>
+</div>
+}
+
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6 text-center">
@@ -34,7 +43,9 @@
                 @if (item.MainAttribute == "STRENGTH")
                 {
                     <div class="heroContainer">
-                        <img src="@item.ImgUrl" alt="Avatar" class="img-responsive" onmouseover="takeName('@item.Name')">
+                        <a asp-controller="Heroes" asp-action="ByName" asp-route-name="@item.Name.ToUpper()">
+                            <img src="@item.ImgUrl" alt="Avatar" class="img-responsive" onmouseover="takeName('@item.Name')">
+                        </a>
                     </div>
                 }
             }

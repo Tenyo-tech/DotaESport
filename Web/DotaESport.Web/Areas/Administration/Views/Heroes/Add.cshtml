@@ -1,26 +1,95 @@
-﻿
-
-@using DotaESport.Common
+﻿@model DotaESport.Web.ViewModels.Heroes.InputModels.AddHeroInputModel
+@using DotaESport.Data.Models.Enums
 @{
-    this.ViewData["Title"] = "Add Heroes";
+    this.ViewData["Title"] = "Add HeroInfo";
 }
 
-    <form method="post">
-        <div class="form-group col-md-4">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="Name">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="imgUrl">ImgUrl</label>
-            <input type="text" class="form-control" id="imgUrl" name="ImgUrl">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="mainAttribute">Main Attribute</label>
-            <select id="mainAttribute" class="form-control" name="MainAttribute">
-                <option>STRENGTH</option>
-                <option>AGILITY</option>
-                <option>INTELLIGENCE</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "image paste table link code media"
+        ]
+    });
+</script>
+
+<form method="post" class="text-white col-md-6" asp-action="Add">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Role"></label>
+        <input asp-for="Role" class="form-control" />
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Portrait"></label>
+        <input asp-for="Portrait" class="form-control" />
+        <span asp-validation-for="Portrait" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Bio"></label>
+        <textarea asp-for="Bio" class="form-control"></textarea>
+        <span asp-validation-for="Bio" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Str"></label>
+        <input asp-for="Str" class="form-control" />
+        <span asp-validation-for="Str" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="StrPerLvl"></label>
+        <input asp-for="StrPerLvl" class="form-control" />
+        <span asp-validation-for="StrPerLvl" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Agi"></label>
+        <input asp-for="Agi" class="form-control" />
+        <span asp-validation-for="Agi" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="AgiPerLvl"></label>
+        <input asp-for="AgiPerLvl" class="form-control" />
+        <span asp-validation-for="AgiPerLvl" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Int"></label>
+        <input asp-for="Int" class="form-control" />
+        <span asp-validation-for="Int" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="IntPerLvl"></label>
+        <input asp-for="IntPerLvl" class="form-control" />
+        <span asp-validation-for="IntPerLvl" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="MinDamage"></label>
+        <input asp-for="MinDamage" class="form-control" />
+        <span asp-validation-for="MinDamage" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="MaxDamage"></label>
+        <input asp-for="MaxDamage" class="form-control" />
+        <span asp-validation-for="MaxDamage" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="MovementSpeed"></label>
+        <input asp-for="MovementSpeed" class="form-control" />
+        <span asp-validation-for="MovementSpeed" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Armor"></label>
+        <input asp-for="Armor" class="form-control" />
+        <span asp-validation-for="Armor" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

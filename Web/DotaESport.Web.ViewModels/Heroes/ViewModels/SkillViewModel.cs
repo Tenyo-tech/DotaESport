@@ -1,19 +1,24 @@
-﻿namespace DotaESport.Data.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using DotaESport.Data.Models;
+using DotaESport.Data.Models.Enums;
+using DotaESport.Services.Mapping;
+using Ganss.XSS;
+
+namespace DotaESport.Web.ViewModels.Heroes.ViewModels
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    using DotaESport.Data.Common.Models;
-    using DotaESport.Data.Models.Enums;
-
-    public class Skill : BaseDeletableModel<int>
+    public class SkillViewModel : IMapFrom<Skill>
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Image { get; set; }
 
         public string Description { get; set; }
+
+        public string SanitizedDescription => new HtmlSanitizer().Sanitize(this.Description);
 
         public string Ability { get; set; }
 
@@ -26,9 +31,5 @@
         public string Cooldown { get; set; }
 
         public string ManaCost { get; set; }
-
-        public int HeroInfoId { get; set; }
-
-        public HeroInfo HeroInfo { get; set; }
     }
 }

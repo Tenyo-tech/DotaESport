@@ -6,13 +6,12 @@
     using System.Threading.Tasks;
 
     using DotaESport.Web.ViewModels.Heroes.InputModels;
+    using DotaESport.Web.ViewModels.Skills;
 
-    public interface IHeroService
+    public interface ISkillsService
     {
-        Task AddHeroAsync(AddHeroInputModel model);
+        Task AddSkillAsync(AddSkillInputModel model, int heroId);
 
-        Task<IEnumerable<T>> GetAllHeroes<T>();
-
-        T GetByName<T>(string name);
+        IEnumerable<T> GetSkillsByHeroId<T>(int heroId);
     }
 }

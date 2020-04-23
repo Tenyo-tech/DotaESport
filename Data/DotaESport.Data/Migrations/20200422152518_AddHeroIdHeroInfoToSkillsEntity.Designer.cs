@@ -4,14 +4,16 @@ using DotaESport.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotaESport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200422152518_AddHeroIdHeroInfoToSkillsEntity")]
+    partial class AddHeroIdHeroInfoToSkillsEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -555,7 +557,7 @@ namespace DotaESport.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HeroInfoId")
+                    b.Property<int>("HeroId")
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
@@ -578,7 +580,7 @@ namespace DotaESport.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HeroInfoId");
+                    b.HasIndex("HeroId");
 
                     b.HasIndex("IsDeleted");
 
@@ -915,9 +917,9 @@ namespace DotaESport.Data.Migrations
 
             modelBuilder.Entity("DotaESport.Data.Models.Skill", b =>
                 {
-                    b.HasOne("DotaESport.Data.Models.HeroInfo", "HeroInfo")
+                    b.HasOne("DotaESport.Data.Models.HeroInfo", "Hero")
                         .WithMany("Skills")
-                        .HasForeignKey("HeroInfoId")
+                        .HasForeignKey("HeroId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

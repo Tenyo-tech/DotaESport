@@ -86,6 +86,7 @@ namespace DotaESport.Web
             services.AddTransient<ICommentsService, CommentsService>();
             services.AddTransient<IItemsService, ItemsService>();
             services.AddTransient<IRecipesService, RecipesService>();
+            services.AddTransient<ISkillsService, SkillsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

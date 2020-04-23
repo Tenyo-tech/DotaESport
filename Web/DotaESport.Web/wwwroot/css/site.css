@@ -104,6 +104,10 @@ body {
     color: goldenrod;
     background: rgba(0, 0, 0, 0.3);
 }
+.text-opacity2 {
+    color: goldenrod;
+    background: rgba(181, 67, 0, 0.3);
+}
 
 #columnHeader {
     margin: 0 auto;
@@ -143,4 +147,124 @@ body {
     border-radius: 3px;
 }
 
+#bodyContainer {
+	position:relative;
+}
+#calloutContainer {
+	position:absolute;
+	top:0px;
+	z-index:1;
+}
 
+#centerColOuter_Callout,#centerColOuter_NoCallout {
+	width:984px;
+	margin:0 auto;
+}
+#centerColOuter_Callout {
+	padding-top:300px;
+}
+#centerColOuter_NoCallout {
+	padding-top:20px;
+}
+#centerColTopShadow,#centerColTop,#centerColBottom,#centerColBottomShadow {
+	z-index:2;
+	width:984px;
+}
+#centerColTopShadow,#centerColBottomShadow {
+	height:25px;
+}
+#centerColTop, #centerColBottom { height: 9px; }
+
+#centerColContainer {
+    z-index: 2;
+    width: 100%;
+    padding: 10px 23px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_repeat.png');
+    background-repeat: repeat-y;
+}
+
+#centerColContent {
+    width: 938px;
+}
+
+#centerColContent h1 {
+    margin: 0;
+    padding: 8px 0;
+    font-family: KoreanFont,georgia,serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-size: 36px;
+    color: #d9d9d9;
+}
+
+#ImageBackground {
+    width: 262px;
+    height: 149px;
+    position: relative;
+    margin: 10px 0 20px 0;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/herotopportrait_container.png');
+}
+
+#centerColContent h3 {
+    color: #9c3627;
+    font-family: KoreanFont,georgia,serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+}
+
+
+.centerColHR {
+    height: 3px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_hr.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px 0;
+}
+
+.redboxOuter {
+    margin: 0;
+    padding: 0;
+    width: 914px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#242728', endColorstr='#111313'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#242728), to(#111313)); /* for webkit browsers */
+    background: -moz-linear-gradient(top, #242728, #111313); /* for firefox 3.6+ */
+}
+
+.redboxTop, .redboxBottom {
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/redborderbox_top.png');
+    margin: 0;
+    width: 914px;
+    height: 23px;
+}
+
+.redboxBottom {
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/redborderbox_bottom.png');
+}
+
+.redboxContent {
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/heropedia/redborderbox_bg_vtile.png');
+    background-repeat: repeat-y;
+    background-position: center;
+    width: 914px;
+    margin: 0;
+}
+#overviewInner {
+    padding: 6px 6px;
+    width: 850px;
+    text-align: left;
+}
+
+#heroPrimaryPortraitOverlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+}
+
+#portraitPosition {
+    position: relative;
+    left: 10px;
+}

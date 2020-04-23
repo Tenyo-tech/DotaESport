@@ -32,7 +32,7 @@ namespace DotaESport.Web.Controllers
             var viewModel = new NewsViewModel
             {
                 Articles =
-                    this.articlesService.GetArticlesByPage<ArticlesInNewsViewModel>(ItemsPerPage, (page - 1) * ItemsPerPage),
+                        this.articlesService.GetArticlesByPage<ArticlesInNewsViewModel> (ItemsPerPage, (page - 1) * ItemsPerPage),
             };
 
             var count = this.articlesService.GetCountOnAllArticles();

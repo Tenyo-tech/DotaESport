@@ -30,7 +30,6 @@
 
         public DbSet<Skill> Skills { get; set; }
 
-
         public DbSet<Article> Articles { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
@@ -97,6 +96,16 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            builder.Entity<HeroInfo>()
+                .HasMany(h => h.Skills)
+                .WithOne(s => s.HeroInfo)
+                .HasForeignKey(s => s.HeroInfoId);
+
+            builder.Entity<Skill>()
+                .HasOne(s => s.HeroInfo)
+                .WithMany(h => h.Skills)
+                .HasForeignKey(s => s.HeroInfoId);
         }
 
         private static void ConfigureUserIdentityRelations(ModelBuilder builder)

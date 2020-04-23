@@ -1,0 +1,66 @@
+﻿@model DotaESport.Web.ViewModels.Skills.AddSkillInputModel
+@using DotaESport.Data.Models.Enums
+@{
+    this.ViewData["Title"] = "Add HeroInfo";
+}
+
+<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "image paste table link code media"
+        ]
+    });
+</script>
+
+
+<form method="post" class="text-white col-md-6" asp-action="Add">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Ability"></label>
+        <input asp-for="Ability" class="form-control" />
+        <span asp-validation-for="Ability" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="DamageType"></label>
+        <select id="DamageType" asp-for="DamageType" asp-items="Html.GetEnumSelectList<DamageType>()" class="form-control"></select>
+        <span asp-validation-for="DamageType" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="PierceSpellImmunity"></label>
+        <select id="PierceSpellImmunity" asp-for="PierceSpellImmunity" asp-items="Html.GetEnumSelectList<PierceSpellImmunity>()" class="form-control"></select>
+        <span asp-validation-for="PierceSpellImmunity" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Affects"></label>
+        <input asp-for="Affects" class="form-control" />
+        <span asp-validation-for="Affects" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Cooldown"></label>
+        <input asp-for="Cooldown" class="form-control" />
+        <span asp-validation-for="Cooldown" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="ManaCost"></label>
+        <input asp-for="ManaCost" class="form-control" />
+        <span asp-validation-for="ManaCost" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

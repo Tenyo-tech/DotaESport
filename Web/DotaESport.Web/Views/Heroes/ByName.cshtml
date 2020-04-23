@@ -1,0 +1,107 @@
+﻿@model DotaESport.Web.ViewModels.Heroes.ViewModels.HeroInfoViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
+
+<div id="bodyContainer">
+    <div id="centerColOuter_NoCallout">
+        <div id="centerColTopShadow">
+            <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_top_shadow.png" width="984" height="25" />
+        </div>
+        <div id="centerColTop"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_top.png" width="984" height="9" /></div>
+        <div id="centerColContainer">
+            <div id="centerColContent">
+                <h1 class="text-center">@Model.Name</h1>
+
+                <img id="ImageBackground" src="@Model.Image" width="256" height="144" class="mx-auto d-block">
+            </div>
+            <p class="text-white text-center">@Model.Role</p>
+            <div class="centerColHR"></div>
+            <h3 class="text-center" style="color: #9c3627">OVERVEIW</h3>
+            <div class="redboxOuter mx-auto d-block">
+                <div class="redboxContent">
+                    <div class="redboxTop"></div>
+                    <div id="overviewInner">
+                        <div class="row">
+                            <div class="col-4 text-white">
+                                <div>
+                                    <img class="ml-4" src="@Model.Portrait" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <br />
+                                <div class="row">
+                                    <div class="col-1">
+                                        <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_str.png" />
+                                    </div>
+                                    <div class="col text-white">
+                                        <h4 class="ml-2">@Model.Str + @Model.StrPerLvl</h4>
+                                    </div>
+                                    <div class="col-1">
+                                        <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_attack.png" />
+                                    </div>
+                                    <div class="col text-white">
+                                        <h4 class="ml-3">@Model.MinDamage - @Model.MaxDamage</h4>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="row">
+                                    <div class="col-1">
+                                        <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_agi.png" />
+                                    </div>
+                                    <div class="col text-white">
+                                        <h4 class="ml-2">@Model.Agi + @Model.AgiPerLvl</h4>
+                                    </div>
+                                    <div class="col-1">
+                                        <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_speed.png" />
+                                    </div>
+                                    <div class="col text-white">
+                                        <h4 class="ml-3">@Model.MovementSpeed</h4>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class="row">
+                                    <div class="col-1">
+                                        <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_int.png" />
+                                    </div>
+                                    <div class="col text-white">
+                                        <h4 class="ml-2">@Model.Int + @Model.IntPerLvl</h4>
+                                    </div>
+                                    <div class="col-1">
+                                        <img src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_defense.png" />
+                                    </div>
+                                    <div class="col text-white">
+                                        <h4 class="ml-3">@Model.Armor</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                    @foreach (var skill in @Model.Skills)
+                    {
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <br/>
+                            <div class="col ml-5 mt-5"><img src="@skill.Image"/>
+                                </div>
+                            <div class="col-6 text-white text-opacity2 mr-5">
+                                <h4 class="text-center">@skill.Name</h4>
+                                @Html.Raw(skill.SanitizedDescription)
+                            </div>
+                        </div>
+                        <br/>
+                    }
+                    <br />
+                    @if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+                    {
+                        <a class="btn btn-primary ml-5" asp-area="Administration" asp-controller="Skills" asp-action="Add" asp-route-heroInfoId="@Model.Id">Add Skill</a>
+                    }
+                    <div class="redboxBottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

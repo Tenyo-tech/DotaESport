@@ -1,14 +1,16 @@
-﻿using DotaESport.Data.Models;
-using DotaESport.Services.Mapping;
-
-namespace DotaESport.Web.ViewModels.Heroes.InputModels
+﻿namespace DotaESport.Web.ViewModels.Heroes.ViewModels
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    public class AddHeroInputModel : IMapTo<HeroInfo>
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
+
+    public class HeroInfoViewModel : IMapFrom<HeroInfo>
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Image { get; set; }
@@ -38,5 +40,7 @@ namespace DotaESport.Web.ViewModels.Heroes.InputModels
         public double MovementSpeed { get; set; }
 
         public double Armor { get; set; }
+
+        public IEnumerable<SkillViewModel> Skills { get; set; }
     }
 }
