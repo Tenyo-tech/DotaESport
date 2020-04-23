@@ -6800,6 +6800,10 @@ button.bg-dark:focus {
   border-bottom: 1px solid #dee2e6 !important;
 }
 
+.border-bottom2 {
+    border-bottom: 1px solid #cac300 !important;
+}
+
 .border-left {
   border-left: 1px solid #dee2e6 !important;
 }
@@ -10072,6 +10076,10 @@ a.text-info:hover, a.text-info:focus {
 
 .text-warning {
   color: #ffc107 !important;
+}
+
+.text-warning2 {
+    color: #cac300 !important;
 }
 
 a.text-warning:hover, a.text-warning:focus {

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DotaESport.Web.ViewModels.Players.AllPlayersViewModel>
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@using DotaESport.Common
+@using DotaESport.Data.Models
+@using DotaESport.Data.Models.Enums
+@using Microsoft.AspNetCore.Identity
+@{
+    this.ViewData["Title"] = "All Players";
+}
+
+@if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+{
+    <a class="btn btn-primary" asp-area="Administration" asp-controller="Players" asp-action="Add">Add Player</a>
+}
+
+
+
+

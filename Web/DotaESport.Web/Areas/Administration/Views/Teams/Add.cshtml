@@ -1,0 +1,51 @@
+﻿@model DotaESport.Web.ViewModels.Teams.AddTeamInputModel
+@using DotaESport.Data.Models.Enums
+@{
+    this.ViewData["Title"] = "Add HeroInfo";
+}
+
+<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "image paste table link code media"
+        ]
+    });
+</script>
+
+
+<form method="post" class="text-white col-md-6" asp-action="Add">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Logo"></label>
+        <input asp-for="Logo" class="form-control" />
+        <span asp-validation-for="Logo" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Location"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Region"></label>
+        <input asp-for="Region" class="form-control" />
+        <span asp-validation-for="Region" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="TeamCaptain"></label>
+        <input asp-for="TeamCaptain" class="form-control" />
+        <span asp-validation-for="TeamCaptain" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="TotalEarnings"></label>
+        <input asp-for="TotalEarnings" class="form-control" />
+        <span asp-validation-for="TotalEarnings" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

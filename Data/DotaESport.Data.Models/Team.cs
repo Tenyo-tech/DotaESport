@@ -17,13 +17,11 @@
 
         public string Region { get; set; }
 
-        public int PlayerId { get; set; }
+        public string TeamCaptain { get; set; }
 
-        public string Coach { get; set; }
+        public decimal? TotalEarnings { get; set; }
 
         public ICollection<Player> Players { get; set; }
-
-        public decimal TotalEarnings { get; set; }
 
         public ICollection<TournamentResult> Achievements { get; set; }
 

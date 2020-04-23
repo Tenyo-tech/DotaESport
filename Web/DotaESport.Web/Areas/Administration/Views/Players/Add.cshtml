@@ -1,0 +1,64 @@
+﻿@model DotaESport.Web.ViewModels.Players.AddPlayerInputModel
+@using DotaESport.Data.Models.Enums
+@{
+    this.ViewData["Title"] = "Add HeroInfo";
+    var teams = Model.Teams.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
+}
+
+<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "image paste table link code media"
+        ]
+    });
+</script>
+
+<form method="post" class="text-white col-md-6" asp-action="Add">
+    <div>
+        <label asp-for="NickName"></label>
+        <input asp-for="NickName" class="form-control" />
+        <span asp-validation-for="NickName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Region"></label>
+        <input asp-for="Region" class="form-control" />
+        <span asp-validation-for="Region" class="text-danger"></span>
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        <label asp-for="TeamId"></label>
+        <select asp-for="TeamId" asp-items="teams" class="form-control"></select>
+        <span asp-validation-for="TeamId" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Status"></label>
+        <select id="status" asp-for="Status" asp-items="Html.GetEnumSelectList<Status>()" class="form-control"></select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Biography"></label>
+        <textarea asp-for="Biography" class="form-control"></textarea>
+        <span asp-validation-for="Biography" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Dota2Info"></label>
+        <textarea asp-for="Dota2Info" class="form-control"></textarea>
+        <span asp-validation-for="Dota2Info" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

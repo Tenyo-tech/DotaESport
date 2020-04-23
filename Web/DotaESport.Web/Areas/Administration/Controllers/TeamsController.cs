@@ -1,4 +1,4 @@
-﻿namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Areas.Administration.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,7 @@
     using DotaESport.Web.ViewModels.Teams;
     using Microsoft.AspNetCore.Mvc;
 
-    public class TeamsController : BaseController
+    public class TeamsController : AdministrationController
     {
         private readonly ITeamsServices teamsServices;
 
@@ -19,23 +19,18 @@
             this.teamsServices = teamsServices;
         }
 
-        public IActionResult All()
+        public IActionResult Add()
         {
-            var viewModel = this.teamsServices.GetAllTeams<AllTeamsViewModel>();
 
-            return this.View(viewModel);
+            return this.View();
         }
 
-        public IActionResult ById(int id)
+        [HttpPost]
+        public async Task<IActionResult> Add(AddTeamInputModel model)
         {
-            var viewModel = this.teamsServices.GetById<TeamViewModel>(id);
+            await this.teamsServices.AddTeamAsync(model);
 
-            if (viewModel == null)
-            {
-                return this.NotFound();
-            }
-
-            return this.View(viewModel);
+            return this.Redirect("/Teams/All");
         }
     }
 }

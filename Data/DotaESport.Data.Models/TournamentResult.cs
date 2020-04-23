@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DotaESport.Data.Common.Models;
+using DotaESport.Data.Models.Enums;
 
 namespace DotaESport.Data.Models
 {
@@ -14,6 +15,8 @@ namespace DotaESport.Data.Models
         public int TournamentId { get; set; }
 
         public Tournament Tournament { get; set; }
+
+        public TournamentState TournamentState { get; set; }
 
         public int Position { get; set; }
 

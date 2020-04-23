@@ -4,14 +4,16 @@ using DotaESport.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotaESport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200423181452_ChangeTeamCoachToTeamCaptain2")]
+    partial class ChangeTeamCoachToTeamCaptain2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -478,9 +480,6 @@ namespace DotaESport.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NickName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Region")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DotaESport.Web.ViewModels.Teams.AllTeamsViewModel>
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@using DotaESport.Common
+@using DotaESport.Data.Models
+@using DotaESport.Data.Models.Enums
+@using Microsoft.AspNetCore.Identity
+@{
+    this.ViewData["Title"] = "All Items";
+}
+
+@if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+{
+    <a class="btn btn-primary" asp-area="Administration" asp-controller="Teams" asp-action="Add">Add Team</a>
+}
+
+<div>
+    <div class="align-left border-bottom2">
+        <h2 class="text-warning2">Europe</h2>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-4">
+            @foreach (var team in Model)
+            {
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <img class="float-left" src="@team.Logo" width="60" height="25" />
+                            @team.Name
+                            <a href="#" id="ShowTeam" class="float-right">Show</a>
+                        </th>
+                    </tr>
+                </thead>
+                <thead>
+                <tr>
+                    <th scope="col">Nickname</th>
+                    <th scope="col">Real Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var player in team.Players)
+                {
+                    <tr>
+                        <th>@player.NickName</th>
+                        <th>@player.Name</th>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            }
+        </div>
+    </div>
+</div>
+
+
+

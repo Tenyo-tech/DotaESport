@@ -30,6 +30,5 @@ namespace DotaESport.Data.Models
 
         public ICollection<TournamentResult> Results { get; set; }
 
-        public ICollection<Team> Teams { get; set; }
     }
 }

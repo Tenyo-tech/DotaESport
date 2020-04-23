@@ -1,13 +1,15 @@
-﻿namespace DotaESport.Data.Models
+﻿namespace DotaESport.Web.ViewModels.Players
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Text;
 
-    using DotaESport.Data.Common.Models;
+    using DotaESport.Data.Models;
     using DotaESport.Data.Models.Enums;
+    using DotaESport.Services.Mapping;
 
-    public class Player : BaseDeletableModel<int>
+    public class AddPlayerInputModel : IMapTo<Player>
     {
         public string NickName { get; set; }
 
@@ -15,9 +17,11 @@
 
         public string Region { get; set; }
 
+        [Range(1, int.MaxValue)]
+        [Display(Name = "Team")]
         public int TeamId { get; set; }
 
-        public Team Team { get; set; }
+        public IEnumerable<TeamDropDownViewModel> Teams { get; set; }
 
         public string Image { get; set; }
 

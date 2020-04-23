@@ -7,7 +7,7 @@
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
 
-    public class AddTeamInputModel : IMapTo<Team>
+    public class AllTeamsViewModel : IMapFrom<Team>
     {
         public string Name { get; set; }
 
@@ -17,8 +17,8 @@
 
         public string Region { get; set; }
 
-        public string TeamCaptain { get; set; }
-
         public decimal? TotalEarnings { get; set; }
+
+        public ICollection<PlayersInTeamViewModel> Players { get; set; }
     }
 }

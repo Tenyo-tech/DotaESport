@@ -4,14 +4,16 @@ using DotaESport.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotaESport.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200423161350_TeamChangesEntity2")]
+    partial class TeamChangesEntity2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -480,9 +482,6 @@ namespace DotaESport.Data.Migrations
                     b.Property<string>("NickName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Region")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -595,6 +594,9 @@ namespace DotaESport.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Coach")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -619,15 +621,17 @@ namespace DotaESport.Data.Migrations
                     b.Property<string>("Region")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TeamCaptain")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal?>("TotalEarnings")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("TournamentId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
+
+                    b.HasIndex("TournamentId");
 
                     b.ToTable("Teams");
                 });
@@ -717,9 +721,6 @@ namespace DotaESport.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("TournamentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TournamentState")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -918,6 +919,13 @@ namespace DotaESport.Data.Migrations
                         .HasForeignKey("HeroInfoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DotaESport.Data.Models.Team", b =>
+                {
+                    b.HasOne("DotaESport.Data.Models.Tournament", null)
+                        .WithMany("Teams")
+                        .HasForeignKey("TournamentId");
                 });
 
             modelBuilder.Entity("DotaESport.Data.Models.TournamentResult", b =>
