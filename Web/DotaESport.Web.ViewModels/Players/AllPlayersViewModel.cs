@@ -14,6 +14,8 @@ namespace DotaESport.Web.ViewModels.Players
 
         public string Name { get; set; }
 
+        public string TeamName { get; set; }
+
         public string Region { get; set; }
     }
 }

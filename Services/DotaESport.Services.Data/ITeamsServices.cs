@@ -14,5 +14,7 @@
         IEnumerable<T> GetAllTeams<T>(int? count = null);
 
         T GetById<T>(int id);
+
+        T GetByName<T>(string name);
     }
 }

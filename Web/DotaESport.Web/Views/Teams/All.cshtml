@@ -29,7 +29,7 @@
                     <tr>
                         <th colspan="2">
                             <img class="float-left" src="@team.Logo" width="60" height="25" />
-                            @team.Name
+                            <a asp-controller="Teams" asp-action="ByName" asp-route-name="@team.Name">@team.Name</a>
                             <a href="#" id="ShowTeam" class="float-right">Show</a>
                         </th>
                     </tr>
@@ -44,7 +44,7 @@
                 @foreach (var player in team.Players)
                 {
                     <tr>
-                        <th>@player.NickName</th>
+                        <th><a asp-controller="Players" asp-action="ById" asp-route-id="@player.Id">@player.NickName</a></th>
                         <th>@player.Name</th>
                     </tr>
                 }

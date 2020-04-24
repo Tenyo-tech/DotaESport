@@ -23,6 +23,18 @@
         public IActionResult All()
         {
             var viewModel = this.playersService.GetAllPlayers<AllPlayersViewModel>();
+            viewModel = viewModel.OrderBy(x => x.TeamName);
+            return this.View(viewModel);
+        }
+
+        public IActionResult ById(int id)
+        {
+            var viewModel = this.playersService.GetById<PlayerViewModel>(id);
+
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
 
             return this.View(viewModel);
         }

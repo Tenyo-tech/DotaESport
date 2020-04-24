@@ -6,15 +6,41 @@
 @using DotaESport.Data.Models
 @using DotaESport.Data.Models.Enums
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
 @{
     this.ViewData["Title"] = "All Players";
 }
 
 @if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
 {
-    <a class="btn btn-primary" asp-area="Administration" asp-controller="Players" asp-action="Add">Add Player</a>
+    <a class="btn btn-primary mx-auto" asp-area="Administration" asp-controller="Players" asp-action="Add">Add Player</a>
 }
 
 
-
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th colspan="4" class="text-center">All Players</th>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <th scope="col">Nickname</th>
+            <th scope="col">Name</th>
+            <th scope="col">Team</th>
+            <th scope="col">Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model)
+        {
+            <tr>
+                <th><a asp-controller="Players" asp-action="ById" asp-route-id="@player.Id">@player.Nickname</a></th>
+                <th>@player.Name</th>
+                <th><a asp-controller="Teams" asp-action="ByName" asp-route-name="@player.TeamName">@player.TeamName</a></th>
+                <th>@player.Region</th>
+            </tr>
+        }
+    </tbody>
+</table>
 

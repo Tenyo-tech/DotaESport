@@ -54,5 +54,13 @@
                 .To<T>().FirstOrDefault();
             return item;
         }
+
+        public T GetByName<T>(string name)
+        {
+            var team = this.teamRepository.All()
+                .Where(x => x.Name.ToUpper() == name.ToUpper())
+                .To<T>().FirstOrDefault();
+            return team;
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace DotaESport.Web.Controllers
+﻿using DotaESport.Web.ViewModels.Heroes.ViewModels;
+using DotaESport.Web.ViewModels.Players;
+
+namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -13,10 +16,12 @@
     public class TeamsController : BaseController
     {
         private readonly ITeamsServices teamsServices;
+        private readonly IPlayersService playersService;
 
-        public TeamsController(ITeamsServices teamsServices)
+        public TeamsController(ITeamsServices teamsServices,IPlayersService playersService)
         {
             this.teamsServices = teamsServices;
+            this.playersService = playersService;
         }
 
         public IActionResult All()
@@ -35,6 +40,20 @@
                 return this.NotFound();
             }
 
+            return this.View(viewModel);
+        }
+
+        public IActionResult ByName(string name)
+        {
+
+            var viewModel = this.teamsServices.GetByName<TeamViewModel>(name);
+            if (viewModel == null)
+            {
+                return this.NotFound();
+            }
+
+            viewModel.Players = this.playersService.GetByTeamId<PlayerViewModel>(viewModel.Id);
+            ;
             return this.View(viewModel);
         }
     }

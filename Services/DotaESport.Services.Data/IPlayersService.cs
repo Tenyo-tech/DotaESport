@@ -17,5 +17,6 @@
         IEnumerable<T> GetByTeamId<T>(int teamId);
 
         IEnumerable<T> GetAllPlayers<T>(int? count = null);
+
     }
 }

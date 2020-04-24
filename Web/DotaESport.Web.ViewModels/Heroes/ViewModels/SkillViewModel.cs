@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DotaESport.Data.Models;
-using DotaESport.Data.Models.Enums;
-using DotaESport.Services.Mapping;
-using Ganss.XSS;
-
-namespace DotaESport.Web.ViewModels.Heroes.ViewModels
+﻿namespace DotaESport.Web.ViewModels.Heroes.ViewModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Data.Models.Enums;
+    using DotaESport.Services.Mapping;
+    using Ganss.XSS;
+
     public class SkillViewModel : IMapFrom<Skill>
     {
         public int Id { get; set; }

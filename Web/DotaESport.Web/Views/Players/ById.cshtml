@@ -1,0 +1,18 @@
+﻿@using DotaESport.Common
+@model DotaESport.Web.ViewModels.Players.PlayerViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
+
+
+<div class="container">
+    <div class="card  mx-auto d-block" style="width:400px">
+        <img class="card-img-top" src="@Model.Image" alt="@Model.NickName" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">@Model.NickName</h4>
+            <h5 class="card-title">@Model.Name</h5>
+            <a asp-controller="Teams" asp-action="ByName" asp-route-name="@Model.TeamName"><h5 class="card-title">@Model.TeamName</h5></a>
+            <p class="card-text">@Html.Raw(Model.SanitizedBiography)</p>
+        </div>
+    </div>
+</div>
