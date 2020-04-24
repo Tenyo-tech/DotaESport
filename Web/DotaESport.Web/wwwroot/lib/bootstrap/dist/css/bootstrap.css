@@ -6733,7 +6733,11 @@ button.bg-info:focus {
 }
 
 .bg-warning {
-  background-color: #ffc107 !important;
+    background-color: #ffc107 !important;
+}
+
+.bg-white-pink {
+    background-color: #fbdfdf !important;
 }
 
 a.bg-warning:hover, a.bg-warning:focus,
@@ -6798,6 +6802,10 @@ button.bg-dark:focus {
 
 .border-bottom {
   border-bottom: 1px solid #dee2e6 !important;
+}
+
+.border-bottom-red {
+    border-bottom: 2px solid #f08484 !important;
 }
 
 .border-bottom2 {
@@ -10040,6 +10048,9 @@ button.bg-dark:focus {
 
 .text-white {
   color: #fff !important;
+}
+.text-red {
+    color: #b12a2a !important;
 }
 
 .text-primary {

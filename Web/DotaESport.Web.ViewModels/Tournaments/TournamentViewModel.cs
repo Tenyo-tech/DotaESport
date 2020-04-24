@@ -1,15 +1,17 @@
-﻿using DotaESport.Data.Models.Enums;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using DotaESport.Data.Models;
+using DotaESport.Data.Models.Enums;
+using DotaESport.Services.Mapping;
+using Ganss.XSS;
 
-namespace DotaESport.Data.Models
+namespace DotaESport.Web.ViewModels.Tournaments
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    using DotaESport.Data.Common.Models;
-
-    public class Tournament : BaseDeletableModel<int>
+    public class TournamentViewModel : IMapFrom<Tournament>
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Image { get; set; }
@@ -30,9 +32,8 @@ namespace DotaESport.Data.Models
 
         public string Info { get; set; }
 
+        public string SanitizedInfo => new HtmlSanitizer().Sanitize(this.Info);
+
         public int TeamCapacity { get; set; }
-
-        public ICollection<TournamentResult> Results { get; set; }
-
     }
 }

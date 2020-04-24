@@ -1,0 +1,115 @@
+﻿@using DotaESport.Common
+@model DotaESport.Web.ViewModels.Tournaments.TournamentViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
+
+    <div class="container-fluid">
+        <div>
+            <h1 class="text-red border-bottom-red text-center">
+                <span>
+                    @Model.Name
+                </span>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <br />
+                <div>
+                    <h1 class="text-red border-bottom-red">
+                        <span>
+                            Info
+                        </span>
+                    </h1>
+                </div>
+                <div class="bg-white-pink">
+                    @Html.Raw(Model.SanitizedInfo)
+                </div>
+            </div>
+            <div class="col">
+                <div class="bg-white-pink">
+                    <h5 class="text-center">@Model.Name</h5>
+                    <img src="@Model.Image" class="img-responsive" />
+                </div>
+                <div class="bg-white-pink">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-right mt-3">
+                                Logo:
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                <img src="@Model.Logo" />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-right">
+                                Location:
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                @Model.Location
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-right">
+                                Dates:
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                @Model.StartDate.Month.@Model.StartDate.Day-@Model.EndDate.Month.@Model.EndDate.Day @Model.EndDate.Year
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-right">
+                                Teams:
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                @Model.TeamCapacity
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-right">
+                                Prize Pool:
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                $@Model.PrizePool
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-right">
+                                Tournament Tier:
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                @Model.Tier
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9">
+
+            </div>
+        </div>
+    </div>

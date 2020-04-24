@@ -1,14 +1,14 @@
-﻿using DotaESport.Data.Models.Enums;
-
-namespace DotaESport.Data.Models
+﻿namespace DotaESport.Web.ViewModels.Tournaments
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    using DotaESport.Data.Common.Models;
+    using DotaESport.Data.Models;
+    using DotaESport.Data.Models.Enums;
+    using DotaESport.Services.Mapping;
 
-    public class Tournament : BaseDeletableModel<int>
+    public class AddTournamentInputModel : IMapTo<Tournament>
     {
         public string Name { get; set; }
 
@@ -31,8 +31,5 @@ namespace DotaESport.Data.Models
         public string Info { get; set; }
 
         public int TeamCapacity { get; set; }
-
-        public ICollection<TournamentResult> Results { get; set; }
-
     }
 }

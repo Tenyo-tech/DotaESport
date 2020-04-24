@@ -1,0 +1,76 @@
+﻿@model DotaESport.Web.ViewModels.Tournaments.AddTournamentInputModel
+@using DotaESport.Data.Models.Enums
+@{
+    this.ViewData["Title"] = "Add HeroInfo";
+}
+
+<script src="/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "image paste table link code media"
+        ]
+    });
+</script>
+
+
+<form method="post" class="text-white col-md-6" asp-action="Add">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Logo"></label>
+        <input asp-for="Logo" class="form-control" />
+        <span asp-validation-for="Logo" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Status"></label>
+        <select id="status" asp-for="Status" asp-items="Html.GetEnumSelectList<TournamentStatus>()" class="form-control"></select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Tier"></label>
+        <select id="Tier" asp-for="Tier" asp-items="Html.GetEnumSelectList<TournamentTier>()" class="form-control"></select>
+        <span asp-validation-for="Tier" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="StartDate"></label>
+        <input asp-for="StartDate" class="form-control" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="EndDate"></label>
+        <input asp-for="EndDate" class="form-control" />
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="PrizePool"></label>
+        <input asp-for="PrizePool" class="form-control" />
+        <span asp-validation-for="PrizePool" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Location"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Info"></label>
+        <textarea asp-for="Info" class="form-control"></textarea>
+        <span asp-validation-for="Info" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="TeamCapacity"></label>
+        <input asp-for="TeamCapacity" class="form-control" />
+        <span asp-validation-for="TeamCapacity" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
