@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DotaESport.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -9,10 +11,14 @@
 
     public class Skill : BaseDeletableModel<int>
     {
+        [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
 
+        [Required]
         public string Image { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
         public string Ability { get; set; }
@@ -27,6 +33,7 @@
 
         public string ManaCost { get; set; }
 
+        [Required]
         public int HeroInfoId { get; set; }
 
         public HeroInfo HeroInfo { get; set; }

@@ -21,37 +21,38 @@
     </div>
     <br />
     <div class="row">
-        <div class="col-4">
-            @foreach (var team in Model)
-            {
-            <table class="table table-bordered table-dark">
-                <thead>
-                    <tr>
-                        <th colspan="2">
-                            <img class="float-left" src="@team.Logo" width="60" height="25" />
-                            <a asp-controller="Teams" asp-action="ByName" asp-route-name="@team.Name">@team.Name</a>
-                            <a href="#" id="ShowTeam" class="float-right">Show</a>
-                        </th>
-                    </tr>
-                </thead>
-                <thead>
-                <tr>
-                    <th scope="col">Nickname</th>
-                    <th scope="col">Real Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach (var player in team.Players)
-                {
-                    <tr>
-                        <th><a asp-controller="Players" asp-action="ById" asp-route-id="@player.Id">@player.NickName</a></th>
-                        <th>@player.Name</th>
-                    </tr>
-                }
-                </tbody>
-            </table>
-            }
-        </div>
+
+        @foreach (var team in Model)
+        {
+            <div class="col-4">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <img class="float-left" src="@team.Logo" width="60" height="25" />
+                                <a asp-controller="Teams" asp-action="ByName" asp-route-name="@team.Name">@team.Name</a>
+                                <a href="#" id="ShowTeam" class="float-right">Show</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nickname</th>
+                            <th scope="col">Real Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var player in team.Players)
+                        {
+                            <tr>
+                                <th><a asp-controller="Players" asp-action="ById" asp-route-id="@player.Id">@player.NickName</a></th>
+                                <th>@player.Name</th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
     </div>
 </div>
 

@@ -11,8 +11,12 @@
 
     public class AddPlayerInputModel : IMapTo<Player>
     {
+        [Required]
+        [MaxLength(100)]
         public string NickName { get; set; }
 
+        [Required]
+        [MaxLength(150)]
         public string Name { get; set; }
 
         public string Region { get; set; }
@@ -23,10 +27,13 @@
 
         public IEnumerable<TeamDropDownViewModel> Teams { get; set; }
 
+        [Required]
         public string Image { get; set; }
 
+        [Required]
         public Status Status { get; set; }
 
+        [Required]
         public string Biography { get; set; }
 
         public string Dota2Info { get; set; }

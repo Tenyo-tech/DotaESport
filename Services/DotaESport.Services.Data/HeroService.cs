@@ -24,7 +24,7 @@ namespace DotaESport.Services.Data
             this.heroInfoRepository = heroInfoRepository;
         }
 
-        public async Task AddHeroAsync(AddHeroInputModel model)
+        public async Task AddHeroAsync(AddHeroInfoInputModel model)
         {
             var hero = new HeroInfo()
             {

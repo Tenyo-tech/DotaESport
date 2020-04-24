@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DotaESport.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -9,12 +11,17 @@
 
     public class Item : BaseDeletableModel<int>
     {
+        [Required]
+        [MaxLength(40)]
         public string Name { get; set; }
 
+        [Required]
         public string ItemImage { get; set; }
 
+        [Required]
         public string ItemBigImage { get; set; }
 
+        [Required]
         public ItemType ItemType { get; set; }
 
         public BasicItemType? BasicItemType { get; set; }

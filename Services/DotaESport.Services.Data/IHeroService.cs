@@ -9,7 +9,7 @@
 
     public interface IHeroService
     {
-        Task AddHeroAsync(AddHeroInputModel model);
+        Task AddHeroAsync(AddHeroInfoInputModel model);
 
         Task<IEnumerable<T>> GetAllHeroes<T>();
 

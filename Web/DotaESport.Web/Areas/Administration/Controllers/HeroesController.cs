@@ -24,7 +24,7 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(AddHeroInputModel model)
+        public async Task<IActionResult> Add(AddHeroInfoInputModel model)
         {
             await this.heroService.AddHeroAsync(model);
 

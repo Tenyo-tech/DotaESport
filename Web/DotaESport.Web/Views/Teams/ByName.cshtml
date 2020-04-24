@@ -28,10 +28,18 @@
                 <li class="col-12 col-md-6 col-lg-3">
                     <div class="mx-auto d-block" style="height: 300px;">
                         <figure>
-                            <img src="@player.Image" class="img-responsive ml-3" alt="@player.Name" />
+                            <img src="@player.Image" class="img-responsive ml-3" alt="@player.NickName" />
                         </figure>
-                        <h3 class="text-center"><a asp-controller="Players" asp-action="ById" asp-route-id="@player.Id">@player.NickName</a></h3>
-                    </div>
+                        <h3 class="text-center text-opacity2">
+                            <a asp-controller="Players" asp-action="ById" asp-route-id="@player.Id">
+                                @if (Model.TeamCaptain.ToUpper() == player.NickName.ToUpper())
+                                {
+                                    <i class="fa fa-crown"></i>
+                                }
+                            @player.NickName
+                            </a>
+                            </h3>
+                        </div>
                 </li>
             }
         </ul>

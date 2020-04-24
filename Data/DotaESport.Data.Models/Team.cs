@@ -1,4 +1,6 @@
-﻿namespace DotaESport.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DotaESport.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -9,14 +11,18 @@
 
     public class Team : BaseDeletableModel<int>
     {
+        [Required]
+        [MaxLength(60)]
         public string Name { get; set; }
 
+        [Required]
         public string Logo { get; set; }
 
         public string Location { get; set; }
 
         public string Region { get; set; }
 
+        [Required]
         public string TeamCaptain { get; set; }
 
         public decimal? TotalEarnings { get; set; }

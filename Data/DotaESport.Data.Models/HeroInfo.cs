@@ -2,18 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Text;
 
     using DotaESport.Data.Common.Models;
 
     public class HeroInfo : BaseDeletableModel<int>
     {
+        [Required]
+        [MaxLength(40)]
         public string Name { get; set; }
 
+        [Required]
         public string Image { get; set; }
 
+        [Required]
         public string Role { get; set; }
 
+        [Required]
         public string Portrait { get; set; }
 
         public string Bio { get; set; }

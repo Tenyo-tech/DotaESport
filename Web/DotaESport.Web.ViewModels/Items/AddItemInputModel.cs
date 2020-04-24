@@ -12,6 +12,7 @@
     public class AddItemInputModel : IMapTo<Item>
     {
         [Required]
+        [MaxLength(60)]
         public string Name { get; set; }
 
         [Required]
@@ -19,6 +20,7 @@
 
         public string ItemBigImage { get; set; }
 
+        [Required]
         public ItemType ItemType { get; set; }
 
         public BasicItemType? BasicItemType { get; set; }
@@ -27,7 +29,6 @@
 
         public NeutralItemTier? NeutralItemTier { get; set; }
 
-        [Required]
         public int ItemGoldPrice { get; set; }
 
         public string DescriptionTitle { get; set; }

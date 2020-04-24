@@ -1,4 +1,5 @@
-﻿using DotaESport.Data.Models.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using DotaESport.Data.Models.Enums;
 
 namespace DotaESport.Data.Models
 {
@@ -10,18 +11,25 @@ namespace DotaESport.Data.Models
 
     public class Tournament : BaseDeletableModel<int>
     {
+        [Required]
+        [MaxLength(150)]
         public string Name { get; set; }
 
+        [Required]
         public string Image { get; set; }
 
         public string Logo { get; set; }
 
+        [Required]
         public TournamentStatus Status { get; set; }
 
+        [Required]
         public TournamentTier Tier { get; set; }
 
+        [Required]
         public DateTime StartDate { get; set; }
 
+        [Required]
         public DateTime EndDate { get; set; }
 
         public decimal PrizePool { get; set; }

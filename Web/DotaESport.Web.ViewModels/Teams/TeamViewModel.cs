@@ -25,6 +25,7 @@ namespace DotaESport.Web.ViewModels.Teams
 
         public decimal? TotalEarnings { get; set; }
 
+        public string TeamCaptain { get; set; }
 
         public IEnumerable<PlayerViewModel> Players { get; set; }
 
