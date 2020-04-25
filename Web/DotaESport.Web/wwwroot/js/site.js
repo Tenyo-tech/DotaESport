@@ -23,6 +23,17 @@ function takeInfo(itemName, itemGold, itemImage2, lore, descrTitle,description,c
     document.getElementById("ById").style.display = "block";
 }
 
+function showHidePlayers() {
+
+    var x = document.getElementById("ByTeam");
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
 $(function () {
     $("time").each(function (i, e) {
         const dateTimeValue = $(e).attr("datetime");

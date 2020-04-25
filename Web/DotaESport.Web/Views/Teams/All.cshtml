@@ -8,6 +8,7 @@
 @using Microsoft.AspNetCore.Identity
 @{
     this.ViewData["Title"] = "All Items";
+    string showHide = "Show";
 }
 
 @if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
@@ -27,13 +28,15 @@
             <div class="col-4">
                 <table class="table table-bordered table-dark">
                     <thead>
-                        <tr>
-                            <th colspan="2">
-                                <img class="float-left" src="@team.Logo" width="60" height="25" />
-                                <a asp-controller="Teams" asp-action="ByName" asp-route-name="@team.Name">@team.Name</a>
-                                <a href="#" id="ShowTeam" class="float-right">Show</a>
-                            </th>
-                        </tr>
+                    <tr>
+                        <th colspan="2">
+                            <img class="float-left" src="@team.Logo" width="60" height="25" />
+                            <a asp-controller="Teams" asp-action="ByName" asp-route-name="@team.Name">@team.Name</a>
+                            <button class="btn btn-dark float-right">
+                                Show
+                            </button>
+                        </th>
+                    </tr>
                     </thead>
                     <thead>
                         <tr>
