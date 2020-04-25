@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using DotaESport.Data.Models;
-using DotaESport.Services.Mapping;
-
-namespace DotaESport.Web.ViewModels.Heroes.InputModels
+﻿namespace DotaESport.Web.ViewModels.Heroes.InputModels
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Text;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
 
     public class AddHeroInfoInputModel : IMapTo<HeroInfo>
     {

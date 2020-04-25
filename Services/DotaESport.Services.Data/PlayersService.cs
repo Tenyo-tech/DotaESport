@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DotaESport.Data.Common.Repositories;
-using DotaESport.Data.Models;
-using DotaESport.Services.Mapping;
-using DotaESport.Web.ViewModels.Items;
-using DotaESport.Web.ViewModels.Players;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotaESport.Services.Data
+﻿namespace DotaESport.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using DotaESport.Data.Common.Repositories;
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
+    using DotaESport.Web.ViewModels.Items;
+    using DotaESport.Web.ViewModels.Players;
+    using Microsoft.EntityFrameworkCore;
+
     public class PlayersService : IPlayersService
     {
         private readonly IDeletableEntityRepository<Player> playerRepository;

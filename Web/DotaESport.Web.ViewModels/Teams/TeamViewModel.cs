@@ -1,6 +1,4 @@
-﻿using DotaESport.Web.ViewModels.Players;
-
-namespace DotaESport.Web.ViewModels.Teams
+﻿namespace DotaESport.Web.ViewModels.Teams
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +6,7 @@ namespace DotaESport.Web.ViewModels.Teams
 
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
+    using DotaESport.Web.ViewModels.Players;
 
     public class TeamViewModel : IMapFrom<Team>
     {

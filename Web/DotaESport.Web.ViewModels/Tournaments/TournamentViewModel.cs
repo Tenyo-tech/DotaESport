@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DotaESport.Data.Models;
-using DotaESport.Data.Models.Enums;
-using DotaESport.Services.Mapping;
-using Ganss.XSS;
-
-namespace DotaESport.Web.ViewModels.Tournaments
+﻿namespace DotaESport.Web.ViewModels.Tournaments
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Data.Models.Enums;
+    using DotaESport.Services.Mapping;
+    using Ganss.XSS;
+
     public class TournamentViewModel : IMapFrom<Tournament>
     {
         public int Id { get; set; }

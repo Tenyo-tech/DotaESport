@@ -1,6 +1,4 @@
-﻿using Ganss.XSS;
-
-namespace DotaESport.Web.ViewModels.Players
+﻿namespace DotaESport.Web.ViewModels.Players
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +7,7 @@ namespace DotaESport.Web.ViewModels.Players
     using DotaESport.Data.Models;
     using DotaESport.Data.Models.Enums;
     using DotaESport.Services.Mapping;
+    using Ganss.XSS;
 
     public class PlayerViewModel : IMapFrom<Player>
     {

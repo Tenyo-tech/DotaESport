@@ -1,9 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DotaESport.Web.ViewModels.Tournaments
+﻿namespace DotaESport.Web.ViewModels.Tournaments
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Text;
 
     using DotaESport.Data.Models;

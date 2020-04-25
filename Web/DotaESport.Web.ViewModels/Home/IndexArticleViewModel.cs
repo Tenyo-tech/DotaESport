@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DotaESport.Data.Models;
-using DotaESport.Services.Mapping;
-
-namespace DotaESport.Web.ViewModels.Home
+﻿namespace DotaESport.Web.ViewModels.Home
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
+
     public class IndexArticleViewModel : IMapFrom<Article>
     {
         public int Id { get; set; }

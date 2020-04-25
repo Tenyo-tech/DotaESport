@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DotaESport.Data.Models;
-using DotaESport.Data.Models.Enums;
-using DotaESport.Services.Mapping;
-
-namespace DotaESport.Web.ViewModels.Items
+﻿namespace DotaESport.Web.ViewModels.Items
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Data.Models.Enums;
+    using DotaESport.Services.Mapping;
+
     public class ItemViewModel : IMapFrom<Item>
     {
         public string Name { get; set; }

@@ -1,0 +1,31 @@
+﻿@model DotaESport.Web.ViewModels.GameplayUpdates.GameplayUpdateViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+    var updates = Model.Updates.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
+}
+
+<div class="row bg-dark2">
+    <div class="col-8">
+        <h1 class="text-red">GAMEPLAY UPDATE</h1>
+        <h1 class="text-red text-center">@Model.Name</h1>
+    </div>
+    <div class="col">
+        @if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+        {
+            <div class="text-center">
+                <a class="btn btn-primary" asp-area="Administration" asp-controller="GameplayUpdates" asp-action="Add">Add Update</a>
+            </div>
+        }
+        <div>
+            <select asp-for="Name" asp-items="updates"><a asp-controller="GameplayUpdates" asp-action="ById"></a></select>
+        </div>
+        <div><h5 class="text-white text-opacity">RECENT UPDATES</h5></div>
+    </div>
+</div>
+
+<div class="bg-dark text-white">
+    <div class="ml-5">
+        @Html.Raw(Model.SanitizedContent);
+    </div>
+</div>
+

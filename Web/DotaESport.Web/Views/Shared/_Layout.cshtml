@@ -51,7 +51,11 @@
                             <div class="dropdown-menu bg-dark">
                                 <a class="nav-link" asp-area="" asp-controller="Heroes" asp-action="All">Heroes</a>
                                 <a class="nav-link" asp-area="" asp-controller="Items" asp-action="All">Items</a>
-                                <a class="nav-link" href="http://www.dota2.com/patches">Gameplay updates</a>
+                                <a class="nav-link" asp-controller="GameplayUpdates" asp-action="LastUpdate">Gameplay Updates</a>
+                                @if (this.User.IsInRole("Admin") || this.User.IsInRole("Administrator"))
+                                {
+                                            <a class="nav-link" asp-area="Administration" asp-controller="GameplayUpdates" asp-action="Add">Add Update</a>
+                                }
                             </div>
                         </li>
                         <li class="nav-item dropdown">

@@ -1,4 +1,4 @@
-﻿namespace DotaESport.Web.ViewModels.Players
+﻿namespace DotaESport.Web.ViewModels.GameplayUpdates
 {
     using System;
     using System.Collections.Generic;
@@ -7,16 +7,11 @@
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
 
-    public class AllPlayersViewModel : IMapFrom<Player>
+    public class GameplayUpdatesDropDownViewModel : IMapFrom<GameplayUpdate>
     {
         public int Id { get; set; }
 
-        public string Nickname { get; set; }
-
         public string Name { get; set; }
 
-        public string TeamName { get; set; }
-
-        public string Region { get; set; }
     }
 }

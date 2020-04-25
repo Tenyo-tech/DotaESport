@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using DotaESport.Data.Models;
-using DotaESport.Services.Mapping;
-
-namespace DotaESport.Web.ViewModels.Articles
+﻿namespace DotaESport.Web.ViewModels.Articles
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
+
     public class ArticlesInNewsViewModel : IMapFrom<Article>
     {
         public int Id { get; set; }

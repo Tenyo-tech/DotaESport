@@ -1,6 +1,4 @@
-﻿using Ganss.XSS;
-
-namespace DotaESport.Web.ViewModels.Articles
+﻿namespace DotaESport.Web.ViewModels.Articles
 {
     using System;
     using System.Collections.Generic;
@@ -10,6 +8,7 @@ namespace DotaESport.Web.ViewModels.Articles
     using AutoMapper;
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
+    using Ganss.XSS;
 
     public class ArticleViewModel : IMapFrom<Article>, IMapTo<Article>, IHaveCustomMappings
     {

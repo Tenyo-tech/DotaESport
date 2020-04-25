@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotaESport.Web.ViewModels.Votes
+﻿namespace DotaESport.Web.ViewModels.Votes
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class VoteResponseModel
     {
         public int VotesCount { get; set; }

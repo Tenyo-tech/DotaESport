@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using DotaESport.Data.Models;
-using DotaESport.Data.Models.Enums;
-using DotaESport.Services.Mapping;
-
-namespace DotaESport.Web.ViewModels.Skills
+﻿namespace DotaESport.Web.ViewModels.Skills
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Data.Models.Enums;
+    using DotaESport.Services.Mapping;
+
     public class AddSkillInputModel : IMapTo<Skill>
     {
         [Required]

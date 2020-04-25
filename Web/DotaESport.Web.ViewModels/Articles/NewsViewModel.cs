@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotaESport.Web.ViewModels.Articles
+﻿namespace DotaESport.Web.ViewModels.Articles
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class NewsViewModel
     {
         public int CurrentPage { get; set; }
