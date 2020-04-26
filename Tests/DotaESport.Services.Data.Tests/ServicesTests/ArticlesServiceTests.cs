@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using DotaESport.Data.Models;
-using DotaESport.Data.Repositories;
-using DotaESport.Services.Data.Tests.Common;
-using DotaESport.Services.Mapping;
-using DotaESport.Web.Controllers;
-using DotaESport.Web.ViewModels;
-using DotaESport.Web.ViewModels.Articles;
-using DotaESport.Web.ViewModels.Home;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
-using Xunit;
-
-namespace DotaESport.Services.Data.Tests.ServicesTests
+﻿namespace DotaESport.Services.Data.Tests.ServicesTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Data.Repositories;
+    using DotaESport.Services.Data.Tests.Common;
+    using DotaESport.Services.Mapping;
+    using DotaESport.Web.Controllers;
+    using DotaESport.Web.ViewModels;
+    using DotaESport.Web.ViewModels.Articles;
+    using DotaESport.Web.ViewModels.Home;
+    using Microsoft.AspNetCore.Mvc;
+    using Moq;
+    using Xunit;
+
     public class ArticlesServiceTests
     {
         private const int ItemsPerPage = 5;
