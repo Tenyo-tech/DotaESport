@@ -1,5 +1,4 @@
-﻿using DotaESport.Web.Hubs;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
 
 namespace DotaESport.Web
 {
@@ -14,11 +13,12 @@ namespace DotaESport.Web
     using DotaESport.Services.Data;
     using DotaESport.Services.Mapping;
     using DotaESport.Services.Messaging;
+    using DotaESport.Web.Hubs;
     using DotaESport.Web.ViewModels;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -51,7 +51,12 @@ namespace DotaESport.Web
                         options.MinimumSameSitePolicy = SameSiteMode.None;
                     });
 
-            services.AddAuthentication().AddSteam();
+            services.AddAuthentication(options =>
+                {
+                    /* Authentication options */
+                })
+                .AddSteam();
+
 
             services.AddControllersWithViews(options =>
                 {

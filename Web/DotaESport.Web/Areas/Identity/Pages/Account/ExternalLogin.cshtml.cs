@@ -51,6 +51,9 @@
         public class InputModel
         {
             [Required]
+            public string Username { get; set; }
+
+            [Required]
             [EmailAddress]
             public string Email { get; set; }
         }
@@ -103,6 +106,7 @@
                 {
                     Input = new InputModel
                     {
+                        Username = info.Principal.FindFirstValue(ClaimTypes.Name),
                         Email = info.Principal.FindFirstValue(ClaimTypes.Email)
                     };
                 }
@@ -123,7 +127,7 @@
 
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser { UserName = Input.Username, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -135,7 +139,11 @@
                         // If account confirmation is required, we need to show the link if we don't have a real email sender
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
                         {
-                            return RedirectToPage("./RegisterConfirmation", new { Email = Input.Email });
+                            return RedirectToPage("./RegisterConfirmation", new
+                            {
+                                Username = Input.Username,
+                                Email = Input.Email
+                            });
                         }
 
                         await _signInManager.SignInAsync(user, isPersistent: false);

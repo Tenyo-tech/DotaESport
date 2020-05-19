@@ -21,20 +21,22 @@ namespace DotaESport.Data.Seeding
             var role = await roleManager.FindByNameAsync(GlobalConstants.AdminRoleName);
 
             var user = await userManager.FindByNameAsync(GlobalConstants.TenyoUserName);
-            var exist = dbContext.UserRoles.Any(x => x.UserId == user.Id &&
-                                                     x.RoleId == role.Id);
 
-            if (exist)
-            {
-                return;
-            }
-            await dbContext.UserRoles.AddAsync(new IdentityUserRole<string>
-            {
-                RoleId = role.Id,
-                UserId = user.Id,
-            });
+            //var exist = dbContext.UserRoles.Any(x => x.UserId == user.Id &&
+            //                                         x.RoleId == role.Id);
+            //;
+            //if (exist)
+            //{
+            //    return;
+            //}
 
-            await dbContext.SaveChangesAsync();
+            //await dbContext.UserRoles.AddAsync(new IdentityUserRole<string>
+            //{
+            //    RoleId = role.Id,
+            //    UserId = user.Id,
+            //});
+
+            //await dbContext.SaveChangesAsync();
         }
     }
 }
