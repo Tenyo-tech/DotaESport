@@ -1,9 +1,13 @@
-﻿using System;
+﻿using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace DotaESport.Web
 {
+    using System;
     using System.Reflection;
 
+    using AspNet.Security.OpenId.Steam;
     using DotaESport.Data;
     using DotaESport.Data.Common;
     using DotaESport.Data.Common.Repositories;
@@ -55,7 +59,20 @@ namespace DotaESport.Web
                 {
                     /* Authentication options */
                 })
-                .AddSteam();
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = this.configuration["Authentication:Facebook:AppId"];
+                    facebookOptions.AppSecret = this.configuration["Authentication:Facebook:AppSecret"];
+                })
+                .AddSteam(steamoptions =>
+                {
+                    steamoptions.ApplicationKey = "B82E78CDDACE931ADF354E26542D0E5B";
+                })
+                .AddOpenId("StackExchange", "StackExchange", options =>
+                {
+                    options.Authority = new Uri("https://openid.stackexchange.com/");
+                    options.CallbackPath = "/signin-stackexchange";
+                });
 
 
             services.AddControllersWithViews(options =>
@@ -68,6 +85,7 @@ namespace DotaESport.Web
                 options.HeaderName = "X-CSRF-TOKEN";
 
             });
+
 
             services.AddSignalR();
 
@@ -116,6 +134,8 @@ namespace DotaESport.Web
                 new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceScope.ServiceProvider).GetAwaiter().GetResult();
             }
 
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -137,6 +157,8 @@ namespace DotaESport.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+
 
             app.UseEndpoints(
                 endpoints =>

@@ -107,7 +107,7 @@
                     Input = new InputModel
                     {
                         Username = info.Principal.FindFirstValue(ClaimTypes.Name),
-                        Email = info.Principal.FindFirstValue(ClaimTypes.Email)
+                        Email = info.Principal.FindFirstValue(ClaimTypes.Email),
                     };
                 }
                 return Page();
@@ -141,8 +141,8 @@
                         {
                             return RedirectToPage("./RegisterConfirmation", new
                             {
-                                Username = Input.Username,
-                                Email = Input.Email
+                                Username = this.Input.Username,
+                                Email = this.Input.Email,
                             });
                         }
 

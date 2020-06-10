@@ -1,12 +1,11 @@
-﻿using DotaESport.Data.Models;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using DotaESport.Data.Models;
     using DotaESport.Services.Data;
     using DotaESport.Services.Mapping;
     using DotaESport.Web.ViewModels.Heroes.InputModels;

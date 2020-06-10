@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace DotaESport.Common
+﻿namespace DotaESport.Common
 {
+    using System.Collections.Generic;
+
     public static class GlobalConstants
     {
         public const string SystemName = "DotaESport";
@@ -15,4 +15,3 @@ namespace DotaESport.Common
         public const string TenyoUserName = "Tenyo";
     }
 }
-

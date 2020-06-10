@@ -1,9 +1,8 @@
-﻿using System.Linq;
-
-namespace DotaESport.Services.Data
+﻿namespace DotaESport.Services.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 

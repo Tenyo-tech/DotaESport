@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace DotaESport.Data.Migrations
+﻿namespace DotaESport.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class FK_Skills_HeroInfos_HeroId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

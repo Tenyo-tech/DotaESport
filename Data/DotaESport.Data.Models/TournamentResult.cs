@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DotaESport.Data.Common.Models;
-using DotaESport.Data.Models.Enums;
-
-namespace DotaESport.Data.Models
+﻿namespace DotaESport.Data.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using DotaESport.Data.Common.Models;
+    using DotaESport.Data.Models.Enums;
+
     public class TournamentResult : BaseDeletableModel<int>
     {
         public int TeamId { get; set; }

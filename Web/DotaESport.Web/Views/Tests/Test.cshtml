@@ -1,0 +1,29 @@
+﻿<div class="jumbotron">
+    @if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        <h1>Welcome, @User.Identity.Name</h1>
+        @foreach (var identity in @User.Identities)
+        {
+            <h1>@identity.AuthenticationType : @identity.Name</h1>
+        }
+        <p>
+            @foreach (var claim in Context.User.Identities)
+            {
+
+                foreach (var item in claim.Claims)
+                {
+            <div><code>@item.Type</code>: <strong>@claim.Name</strong></div>
+                }
+                
+            }
+        </p>
+
+        <a class="btn btn-lg btn-danger" href="/signout?returnUrl=%2F">Sign out</a>
+    }
+
+    else
+    {
+        <h1>Welcome, anonymous</h1>
+        <a class="btn btn-lg btn-success" href="/signin?returnUrl=%2F">Sign in</a>
+    }
+</div>

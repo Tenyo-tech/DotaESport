@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DotaESport.Data.Common.Repositories;
-using DotaESport.Data.Models;
-using DotaESport.Services.Mapping;
-using DotaESport.Web.ViewModels.Skills;
-
-namespace DotaESport.Services.Data
+﻿namespace DotaESport.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using DotaESport.Data.Common.Repositories;
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Mapping;
+    using DotaESport.Web.ViewModels.Skills;
+
     public class SkillsService : ISkillsService
     {
         private readonly IDeletableEntityRepository<Skill> skillsRepository;

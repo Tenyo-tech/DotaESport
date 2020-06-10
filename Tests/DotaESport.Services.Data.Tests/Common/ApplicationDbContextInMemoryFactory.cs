@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DotaESport.Data;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotaESport.Services.Data.Tests
+﻿namespace DotaESport.Services.Data.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using DotaESport.Data;
+    using Microsoft.EntityFrameworkCore;
+
     public class ApplicationDbContextInMemoryFactory
     {
         public static ApplicationDbContext InitializeContext()

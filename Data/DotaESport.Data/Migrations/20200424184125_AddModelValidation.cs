@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace DotaESport.Data.Migrations
+﻿namespace DotaESport.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddModelValidation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

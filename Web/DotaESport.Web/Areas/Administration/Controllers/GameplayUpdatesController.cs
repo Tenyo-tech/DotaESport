@@ -1,6 +1,4 @@
-﻿using DotaESport.Web.ViewModels.GameplayUpdates;
-
-namespace DotaESport.Web.Areas.Administration.Controllers
+﻿namespace DotaESport.Web.Areas.Administration.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +6,7 @@ namespace DotaESport.Web.Areas.Administration.Controllers
     using System.Threading.Tasks;
 
     using DotaESport.Services.Data;
+    using DotaESport.Web.ViewModels.GameplayUpdates;
     using DotaESport.Web.ViewModels.Players;
     using Microsoft.AspNetCore.Mvc;
 

@@ -1,6 +1,4 @@
-﻿using DotaESport.Web.ViewModels.Tournaments;
-
-namespace DotaESport.Web.Areas.Administration.Controllers
+﻿namespace DotaESport.Web.Areas.Administration.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +7,7 @@ namespace DotaESport.Web.Areas.Administration.Controllers
 
     using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels.Items;
+    using DotaESport.Web.ViewModels.Tournaments;
     using Microsoft.AspNetCore.Mvc;
 
     public class TournamentsController : AdministrationController

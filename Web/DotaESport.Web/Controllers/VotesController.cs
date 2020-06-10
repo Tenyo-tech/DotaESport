@@ -1,12 +1,12 @@
-﻿using System.Threading.Tasks;
-using DotaESport.Data.Models;
-using DotaESport.Web.ViewModels.Votes;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
+    using System.Threading.Tasks;
+
+    using DotaESport.Data.Models;
     using DotaESport.Services.Data;
+    using DotaESport.Web.ViewModels.Votes;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]

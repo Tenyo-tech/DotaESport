@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace DotaESport.Data.Migrations
+﻿namespace DotaESport.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddHeroInfoAndSkillsEntities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,7 +32,7 @@ namespace DotaESport.Data.Migrations
                     MinDamage = table.Column<decimal>(nullable: false),
                     MaxDamage = table.Column<decimal>(nullable: false),
                     MovementSpeed = table.Column<double>(nullable: false),
-                    Armor = table.Column<double>(nullable: false)
+                    Armor = table.Column<double>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -57,7 +58,7 @@ namespace DotaESport.Data.Migrations
                     Affects = table.Column<string>(nullable: true),
                     Cooldown = table.Column<string>(nullable: true),
                     ManaCost = table.Column<string>(nullable: true),
-                    HeroInfoId = table.Column<int>(nullable: true)
+                    HeroInfoId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {

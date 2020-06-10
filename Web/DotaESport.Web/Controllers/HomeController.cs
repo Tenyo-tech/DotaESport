@@ -1,26 +1,33 @@
-﻿using System.Linq;
-using DotaESport.Services.Data;
-using DotaESport.Web.ViewModels.Administration.Dashboard;
-using DotaESport.Web.ViewModels.Home;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using IndexViewModel = DotaESport.Web.ViewModels.Home.IndexViewModel;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
     using System.Diagnostics;
+    using System.Linq;
+    using System.Threading.Tasks;
 
+    using AspNet.Security.OpenId.Steam;
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels;
-
+    using DotaESport.Web.ViewModels.Administration.Dashboard;
+    using DotaESport.Web.ViewModels.Home;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+
+    using IndexViewModel = DotaESport.Web.ViewModels.Home.IndexViewModel;
 
     public class HomeController : BaseController
     {
         private readonly IArticlesService articlesService;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
 
-        public HomeController(IArticlesService articlesService)
+        public HomeController(IArticlesService articlesService, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             this.articlesService = articlesService;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
         public IActionResult Index()

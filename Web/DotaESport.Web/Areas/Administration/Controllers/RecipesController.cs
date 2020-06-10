@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DotaESport.Services.Data;
-
-namespace DotaESport.Web.Areas.Administration.Controllers
+﻿namespace DotaESport.Web.Areas.Administration.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using DotaESport.Services.Data;
+
     public class RecipesController : AdministrationController
     {
         private readonly IItemsService itemsService;

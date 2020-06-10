@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace DotaESport.Data.Migrations
+﻿namespace DotaESport.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class GameplayUpdateEntity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,7 +28,7 @@ namespace DotaESport.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    Content = table.Column<string>(nullable: true)
+                    Content = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {

@@ -22,7 +22,7 @@
                     VideoUrl = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -47,7 +47,7 @@
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     ArticleId = table.Column<int>(nullable: false),
                     Content = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: true)
+                    UserId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -76,7 +76,7 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     ArticleId = table.Column<int>(nullable: false),
                     UserId = table.Column<string>(nullable: false),
-                    Type = table.Column<int>(nullable: false)
+                    Type = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {

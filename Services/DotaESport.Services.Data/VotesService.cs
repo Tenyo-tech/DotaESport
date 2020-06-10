@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DotaESport.Data.Common.Repositories;
-using DotaESport.Data.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotaESport.Services.Data
+﻿namespace DotaESport.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using DotaESport.Data.Common.Repositories;
+    using DotaESport.Data.Models;
+    using Microsoft.EntityFrameworkCore;
+
     public class VotesService : IVotesServices
     {
         private readonly IRepository<Vote> votesRepository;

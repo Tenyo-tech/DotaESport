@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DotaESport.Data.Models;
-using DotaESport.Services.Data;
-using DotaESport.Web.ViewModels.Comments;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using DotaESport.Data.Models;
+    using DotaESport.Services.Data;
+    using DotaESport.Web.ViewModels.Comments;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+
     public class CommentsController : BaseController
     {
         private readonly ICommentsService commentsService;

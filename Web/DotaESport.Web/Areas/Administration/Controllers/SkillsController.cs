@@ -1,16 +1,15 @@
-﻿using DotaESport.Common;
-using Microsoft.AspNetCore.Authorization;
-
-namespace DotaESport.Web.Areas.Administration.Controllers
+﻿namespace DotaESport.Web.Areas.Administration.Controllers
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using DotaESport.Common;
     using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels.Heroes.InputModels;
     using DotaESport.Web.ViewModels.Skills;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     public class SkillsController : AdministrationController

@@ -1,8 +1,4 @@
-﻿using DotaESport.Web.ViewModels.Items;
-using DotaESport.Web.ViewModels.Tournaments;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -10,6 +6,9 @@ namespace DotaESport.Web.Controllers
     using System.Threading.Tasks;
 
     using DotaESport.Services.Data;
+    using DotaESport.Web.ViewModels.Items;
+    using DotaESport.Web.ViewModels.Tournaments;
+    using Microsoft.AspNetCore.Mvc;
 
     public class TournamentsController : BaseController
     {

@@ -19,7 +19,7 @@
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     ImgUrl = table.Column<string>(nullable: true),
-                    MainAttribute = table.Column<string>(nullable: true)
+                    MainAttribute = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -40,7 +40,7 @@
                     Cooldown = table.Column<double>(nullable: false),
                     ImgURL = table.Column<string>(nullable: true),
                     VideoURL = table.Column<string>(nullable: true),
-                    HeroId = table.Column<string>(nullable: true)
+                    HeroId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {

@@ -1,7 +1,4 @@
-﻿using DotaESport.Web.ViewModels.Heroes.ViewModels;
-using DotaESport.Web.ViewModels.Players;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +6,9 @@ namespace DotaESport.Web.Controllers
     using System.Threading.Tasks;
 
     using DotaESport.Services.Data;
+    using DotaESport.Web.ViewModels.Heroes.ViewModels;
     using DotaESport.Web.ViewModels.Items;
+    using DotaESport.Web.ViewModels.Players;
     using DotaESport.Web.ViewModels.Teams;
     using Microsoft.AspNetCore.Mvc;
 

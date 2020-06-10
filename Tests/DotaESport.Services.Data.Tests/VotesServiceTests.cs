@@ -1,12 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-
-namespace DotaESport.Services.Data.Tests
+﻿namespace DotaESport.Services.Data.Tests
 {
+    using System;
+    using System.Threading.Tasks;
+
     using DotaESport.Data;
     using DotaESport.Data.Models;
     using DotaESport.Data.Repositories;
-    using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore;
     using Xunit;
 
     public class VotesServiceTests

@@ -127,26 +127,26 @@
             Assert.True(articlesId[1] is int);
         }
 
-        [Fact]
-        public void TestIndexArticleViewModel()
-        {
-            var context = ApplicationDbContextInMemoryFactory.InitializeContext();
-            var articleRepository = new EfDeletableEntityRepository<Article>(context);
-            var mockService = new Mock<IArticlesService>();
+        //[Fact]
+        //public void TestIndexArticleViewModel()
+        //{
+        //    var context = ApplicationDbContextInMemoryFactory.InitializeContext();
+        //    var articleRepository = new EfDeletableEntityRepository<Article>(context);
+        //    var mockService = new Mock<IArticlesService>();
 
-            mockService.Setup(x => x.GetAll<IndexArticleViewModel>(It.IsAny<int>())).Returns(new List<IndexArticleViewModel>
-            {
-                new IndexArticleViewModel {ImgUrl = "img.1", Title = "Team Nigma", Content = "Team Nigma"},
-                new IndexArticleViewModel {ImgUrl = "img.2", Title = "Team Secret", Content = "Team Secret"},
-                new IndexArticleViewModel {ImgUrl = "img.3", Title = "Virtus Pro", Content = "Virtus Pro"},
-            });
+        //    mockService.Setup(x => x.GetAll<IndexArticleViewModel>(It.IsAny<int>())).Returns(new List<IndexArticleViewModel>
+        //    {
+        //        new IndexArticleViewModel {ImgUrl = "img.1", Title = "Team Nigma", Content = "Team Nigma"},
+        //        new IndexArticleViewModel {ImgUrl = "img.2", Title = "Team Secret", Content = "Team Secret"},
+        //        new IndexArticleViewModel {ImgUrl = "img.3", Title = "Virtus Pro", Content = "Virtus Pro"},
+        //    });
 
-            var controller = new HomeController(mockService.Object);
+        //    var controller = new HomeController(mockService.Object);
 
-            var result = controller.Index();
+        //    var result = controller.Index();
 
-            Assert.IsType<ViewResult>(result);
-        }
+        //    Assert.IsType<ViewResult>(result);
+        //}
 
         [Fact]
         public async Task TestGetAllMethod()

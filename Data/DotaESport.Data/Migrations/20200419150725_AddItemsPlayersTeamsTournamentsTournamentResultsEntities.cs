@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace DotaESport.Data.Migrations
+﻿namespace DotaESport.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddItemsPlayersTeamsTournamentsTournamentResultsEntities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,7 +55,7 @@ namespace DotaESport.Data.Migrations
                     Lore = table.Column<string>(nullable: true),
                     Cooldown = table.Column<int>(nullable: true),
                     ManaCost = table.Column<int>(nullable: true),
-                    ItemId = table.Column<int>(nullable: true)
+                    ItemId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -85,7 +86,7 @@ namespace DotaESport.Data.Migrations
                     PrizePool = table.Column<decimal>(nullable: false),
                     Location = table.Column<string>(nullable: true),
                     Info = table.Column<string>(nullable: true),
-                    TeamCapacity = table.Column<int>(nullable: false)
+                    TeamCapacity = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -109,7 +110,7 @@ namespace DotaESport.Data.Migrations
                     PlayerId = table.Column<int>(nullable: false),
                     Coach = table.Column<string>(nullable: true),
                     TotalEarnings = table.Column<decimal>(nullable: false),
-                    TournamentId = table.Column<int>(nullable: true)
+                    TournamentId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -138,7 +139,7 @@ namespace DotaESport.Data.Migrations
                     Image = table.Column<string>(nullable: true),
                     Status = table.Column<int>(nullable: false),
                     Biography = table.Column<string>(nullable: true),
-                    Dota2Info = table.Column<string>(nullable: true)
+                    Dota2Info = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -165,7 +166,7 @@ namespace DotaESport.Data.Migrations
                     TournamentId = table.Column<int>(nullable: false),
                     Position = table.Column<int>(nullable: false),
                     DPCPoints = table.Column<int>(nullable: false),
-                    Reward = table.Column<decimal>(nullable: false)
+                    Reward = table.Column<decimal>(nullable: false),
                 },
                 constraints: table =>
                 {

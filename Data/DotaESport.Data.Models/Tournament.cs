@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using DotaESport.Data.Models.Enums;
-
-namespace DotaESport.Data.Models
+﻿namespace DotaESport.Data.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Text;
 
     using DotaESport.Data.Common.Models;
+    using DotaESport.Data.Models.Enums;
 
     public class Tournament : BaseDeletableModel<int>
     {
