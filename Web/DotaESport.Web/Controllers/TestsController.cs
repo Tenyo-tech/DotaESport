@@ -60,7 +60,7 @@ namespace DotaESport.Web.Controllers
 
             var info1 = this.userManager.GetUserAsync(this.User);
 
-            return this.Json(sb);
+            return this.Json(user);
         }
 
     }
