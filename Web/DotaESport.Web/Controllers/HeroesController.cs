@@ -17,7 +17,7 @@
         private readonly IHeroService heroService;
         private readonly ISkillsService skillsService;
 
-        public HeroesController(IHeroService heroService,ISkillsService skillsService)
+        public HeroesController(IHeroService heroService, ISkillsService skillsService)
         {
             this.heroService = heroService;
             this.skillsService = skillsService;

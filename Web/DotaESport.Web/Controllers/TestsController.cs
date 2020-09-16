@@ -45,22 +45,26 @@ namespace DotaESport.Web.Controllers
             var item3 = steamAuthenticationOptions.UserInformationEndpoint;
             var item4 = SteamAuthenticationConstants.Parameters.Name;
             var item5 = SteamAuthenticationConstants.Parameters.SteamId;
-            var item6 = SteamAuthenticationConstants.Parameters.Key;
-            var item7 = SteamAuthenticationConstants.Parameters.Players;
-            var item8 = SteamAuthenticationConstants.Parameters.Response;
-            var item9 = SteamAuthenticationConstants.Namespaces.Identifier;
-            var item10 = SteamAuthenticationConstants.Namespaces.LegacyIdentifier;
+            //var item6 = SteamAuthenticationConstants.Parameters.Key;
+            //var item7 = SteamAuthenticationConstants.Parameters.Players;
+            //var item8 = SteamAuthenticationConstants.Parameters.Response;
+            //var item9 = SteamAuthenticationConstants.Namespaces.Identifier;
+            //var item10 = SteamAuthenticationConstants.Namespaces.LegacyIdentifier;
+            //
+            //var item11 = SteamAuthenticationDefaults.UserInformationEndpoint;
+            //var item12 = SteamAuthenticationDefaults.Authority;
+            //var item13 = SteamAuthenticationDefaults.DisplayName;
+            //var item14 = SteamAuthenticationDefaults.AuthenticationScheme;
+            //var item15 = SteamAuthenticationDefaults.CallbackPath;
 
-            var item11 = SteamAuthenticationDefaults.UserInformationEndpoint;
-            var item12 = SteamAuthenticationDefaults.Authority;
-            var item13 = SteamAuthenticationDefaults.DisplayName;
-            var item14 = SteamAuthenticationDefaults.AuthenticationScheme;
-            var item15 = SteamAuthenticationDefaults.CallbackPath;
-
+            foreach (var item in item5)
+            {
+                var asd = item;
+            }
 
             var info1 = this.userManager.GetUserAsync(this.User);
 
-            return this.Json(user);
+            return this.View();
         }
 
     }

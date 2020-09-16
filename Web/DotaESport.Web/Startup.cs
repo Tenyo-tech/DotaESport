@@ -114,6 +114,7 @@ namespace DotaESport.Web
             services.AddTransient<IPlayersService, PlayersService>();
             services.AddTransient<ITournamentsService, TournamentsService>();
             services.AddTransient<IGameplayUpdatesService, GameplayUpdatesService>();
+            services.AddTransient<ISteamInfoService, SteamInfoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

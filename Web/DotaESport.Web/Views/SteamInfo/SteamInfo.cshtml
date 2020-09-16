@@ -1,0 +1,12 @@
+﻿@using DotaESport.Common
+@model DotaESport.Web.ViewModels.SteamInfo.SteamInfoViewModel
+@{
+    this.ViewData["Title"] = "Steam Info";
+}
+
+
+    <div class="text-opacity">
+        <h3>@Model.SteamId</h3>
+        <h3>@Model.Username</h3>
+        <h3>@Model.Login</h3>
+    </div>
