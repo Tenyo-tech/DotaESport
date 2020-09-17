@@ -9,7 +9,7 @@
     using DotaESport.Data.Models.Enums;
     using DotaESport.Services.Mapping;
 
-    public class AddPlayerInputModel : IMapTo<Player>
+    public class AddPlayerInputModel : IMapTo<ProPlayer>
     {
         [Required]
         [MaxLength(100)]

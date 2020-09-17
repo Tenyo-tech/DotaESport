@@ -40,7 +40,7 @@
 
         public DbSet<Item> Items { get; set; }
 
-        public DbSet<Player> Players { get; set; }
+        public DbSet<ProPlayer> ProPlayers { get; set; }
 
         public DbSet<Team> Teams { get; set; }
 

@@ -15,16 +15,16 @@
 
     public class PlayersService : IPlayersService
     {
-        private readonly IDeletableEntityRepository<Player> playerRepository;
+        private readonly IDeletableEntityRepository<ProPlayer> playerRepository;
 
-        public PlayersService(IDeletableEntityRepository<Player> playerRepository)
+        public PlayersService(IDeletableEntityRepository<ProPlayer> playerRepository)
         {
             this.playerRepository = playerRepository;
         }
 
         public async Task AddPlayerAsync(AddPlayerInputModel model)
         {
-            var player = new Player
+            var player = new ProPlayer
             {
                 NickName = model.NickName,
                 Name = model.Name,
@@ -41,7 +41,7 @@
 
         public IEnumerable<T> GetAllPlayers<T>(int? count = null)
         {
-            IQueryable<Player> query =
+            IQueryable<ProPlayer> query =
                 this.playerRepository.All().OrderBy(x => x.Name);
             if (count.HasValue)
             {

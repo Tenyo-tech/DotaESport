@@ -9,7 +9,7 @@
     using DotaESport.Services.Mapping;
     using Ganss.XSS;
 
-    public class PlayerViewModel : IMapFrom<Player>
+    public class PlayerViewModel : IMapFrom<ProPlayer>
     {
         public int Id { get; set; }
 

@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Net.Http;
     using System.Threading.Tasks;
+    using DotaESport.Common;
     using DotaESport.Data.Models;
     using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels.SteamInfo;
@@ -22,7 +23,6 @@
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly ISteamInfoService steamInfoService;
-        private readonly string steamApiKey = "B82E78CDDACE931ADF354E26542D0E5B";
 
         public SteamInfoController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ISteamInfoService steamInfoService)
         {
@@ -50,7 +50,7 @@
 
             var player = await openDota.Players.GetPlayerByIdAsync(steamId32);
             ;
-            var webInterfaceFactory = new SteamWebInterfaceFactory(this.steamApiKey);
+            var webInterfaceFactory = new SteamWebInterfaceFactory(GlobalConstants.SteamApiKey);
             ;
 
             var authserver = (steamId64 - 76561197960265728) & 1;

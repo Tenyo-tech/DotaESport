@@ -7,7 +7,7 @@
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
 
-    public class AllPlayersViewModel : IMapFrom<Player>
+    public class AllPlayersViewModel : IMapFrom<ProPlayer>
     {
         public int Id { get; set; }
 

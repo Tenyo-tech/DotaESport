@@ -8,7 +8,7 @@
     using DotaESport.Data.Common.Models;
     using DotaESport.Data.Models.Enums;
 
-    public class Player : BaseDeletableModel<int>
+    public class ProPlayer : BaseDeletableModel<int>
     {
         [Required]
         [MaxLength(60)]

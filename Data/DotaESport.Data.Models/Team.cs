@@ -26,7 +26,7 @@
 
         public decimal? TotalEarnings { get; set; }
 
-        public ICollection<Player> Players { get; set; }
+        public ICollection<ProPlayer> ProPlayers { get; set; }
 
         public ICollection<TournamentResult> Achievements { get; set; }
 

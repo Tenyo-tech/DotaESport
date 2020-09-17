@@ -84,6 +84,10 @@ body {
     background-size: cover;
 }
 
+.bg-white-pink {
+    background-color: #ff678c !important;
+}
+
 .bg-DotA {
     background-image: url(https://wallpaperaccess.com/full/1719375.jpg);
     background-color: #000000;
@@ -99,6 +103,10 @@ body {
 .text-opacity2 {
     color: goldenrod;
     background: rgba(181, 67, 0, 0.3);
+}
+
+.text-red {
+    color: #bb2c31 !important;
 }
 
 #columnHeader {
