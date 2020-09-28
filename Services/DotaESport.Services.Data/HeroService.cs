@@ -54,6 +54,12 @@
                 .To<T>()
                 .ToArrayAsync();
 
+        public IEnumerable<T> GetAllHeroes2<T>() =>
+             this.heroRepository
+                .AllAsNoTracking()
+                .To<T>()
+                .ToArray();
+
         public T GetByName<T>(string name)
         {
             var hero = this.heroInfoRepository.All()

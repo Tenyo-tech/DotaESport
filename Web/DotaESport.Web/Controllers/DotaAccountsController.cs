@@ -13,6 +13,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using OpenDotaDotNet;
     using SteamWebAPI2.Interfaces;
     using SteamWebAPI2.Utilities;
 
@@ -42,9 +43,19 @@
 
             var playerSummaryResponse = await steamInterface.GetPlayerSummaryAsync((ulong)steamId64);
 
+            var openDota = new OpenDotaApi();
+            var recentMatches = await openDota.Players.GetPlayerRecentMatchesAsync(steamId32);
+
+            var lastMatch = recentMatches.FirstOrDefault();
+
+            var matchDetails = openDota.Matches.GetMatchByIdAsync(lastMatch.MatchId);
+
+
+
             var viewModel = new DotaAccountsViewModel
             {
                 Nickname = playerSummaryResponse.Data.Nickname,
+                Avatar = playerSummaryResponse.Data.AvatarMediumUrl,
             };
 
             return this.View(viewModel);

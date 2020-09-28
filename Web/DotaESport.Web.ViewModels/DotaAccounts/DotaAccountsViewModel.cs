@@ -7,5 +7,7 @@
     public class DotaAccountsViewModel
     {
         public string Nickname { get; set; }
+
+        public string Avatar { get; set; }
     }
 }

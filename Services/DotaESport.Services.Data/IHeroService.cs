@@ -13,6 +13,8 @@
 
         Task<IEnumerable<T>> GetAllHeroes<T>();
 
+        IEnumerable<T> GetAllHeroes2<T>();
+
         T GetByName<T>(string name);
     }
 }

@@ -31,6 +31,15 @@
             return this.View(allHeroes);
         }
 
+        public IActionResult All2()
+        {
+            var allHeroes = this.heroService
+                .GetAllHeroes2<AllHeroesViewModel>();
+
+            return this.View(allHeroes);
+        }
+
+
         public IActionResult ByName(string name)
         {
 
