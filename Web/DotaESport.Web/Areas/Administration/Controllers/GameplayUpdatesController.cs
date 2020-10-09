@@ -31,7 +31,7 @@
 
             var updateId = await this.gameplayUpdatesService.AddUpdateAsync(model);
 
-            return this.Redirect($"GameplayUpdates/ById/{updateId}");
+            return this.Redirect($"/GameplayUpdates/ById/{updateId}");
         }
     }
 }

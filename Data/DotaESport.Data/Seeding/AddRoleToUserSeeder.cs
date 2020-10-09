@@ -23,8 +23,7 @@
 
             var user = await userManager.FindByNameAsync(GlobalConstants.TenyoUserName);
 
-            var exist = dbContext.UserRoles.Any(x => x.UserId == user.Id &&
-                                                     x.RoleId == role.Id);
+            var exist = dbContext.UserRoles.Any(x => x.UserId == user.Id && x.RoleId == role.Id);
 
             if (exist)
             {

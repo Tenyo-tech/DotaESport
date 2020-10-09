@@ -45,7 +45,7 @@
         {
             var id = this.gameplayRepository
                 .All()
-                .OrderByDescending(x => x.CreatedOn)
+                .OrderByDescending(x => x.Name)
                 .Select(x => x.Id)
                 .FirstOrDefault();
             return id;
@@ -54,7 +54,7 @@
         public IEnumerable<T> GetAllUpdates<T>(int? count = null)
         {
             IQueryable<GameplayUpdate> query =
-                this.gameplayRepository.All().OrderBy(x => x.Name);
+                this.gameplayRepository.All().OrderByDescending(x => x.Name);
             if (count.HasValue)
             {
                 query = query.Take(count.Value);

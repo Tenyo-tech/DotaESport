@@ -58,22 +58,16 @@ namespace DotaESport.Web
             services.AddAuthentication(options =>
                 {
                     /* Authentication options */
-                })
-                .AddFacebook(facebookOptions =>
-                {
-                    facebookOptions.AppId = this.configuration["Authentication:Facebook:AppId"];
-                    facebookOptions.AppSecret = this.configuration["Authentication:Facebook:AppSecret"];
-                })
-                .AddSteam(steamoptions =>
+                }).AddSteam(steamoptions =>
                 {
                     steamoptions.ApplicationKey = "B82E78CDDACE931ADF354E26542D0E5B";
-                })
-                .AddOpenId("StackExchange", "StackExchange", options =>
-                {
-                    options.Authority = new Uri("https://openid.stackexchange.com/");
-                    options.CallbackPath = "/signin-stackexchange";
                 });
 
+            //.AddFacebook(facebookOptions =>
+            // {
+            //     facebookOptions.AppId = this.configuration["Authentication:Facebook:AppId"];
+            //     facebookOptions.AppSecret = this.configuration["Authentication:Facebook:AppSecret"];
+            // })
 
             services.AddControllersWithViews(options =>
                 {
