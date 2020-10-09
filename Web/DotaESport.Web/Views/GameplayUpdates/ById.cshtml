@@ -17,7 +17,13 @@
             </div>
         }
         <div>
-            <select asp-for="Name" asp-items="updates"><a asp-controller="GameplayUpdates" asp-action="ById">@Model.Name</a></select>
+            <select name="forma" onchange="location = this.value;">
+                <option>select update</option>
+                @foreach (var update in Model.Updates)
+                {
+                    <option value="@update.Id">@update.Name</option>
+                }
+            </select>
         </div>
         <div><h5 class="text-white text-opacity">RECENT UPDATES</h5></div>
     </div>
