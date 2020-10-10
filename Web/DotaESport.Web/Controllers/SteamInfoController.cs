@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Net.Http;
     using System.Threading.Tasks;
+
     using DotaESport.Common;
     using DotaESport.Data.Models;
     using DotaESport.Services.Data;

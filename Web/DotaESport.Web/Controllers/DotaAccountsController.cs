@@ -50,8 +50,6 @@
 
             var matchDetails = openDota.Matches.GetMatchByIdAsync(lastMatch.MatchId);
 
-
-
             var viewModel = new DotaAccountsViewModel
             {
                 Nickname = playerSummaryResponse.Data.Nickname,

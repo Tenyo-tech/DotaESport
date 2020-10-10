@@ -2,7 +2,6 @@
 {
     using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels.Administration.Dashboard;
-
     using Microsoft.AspNetCore.Mvc;
 
     public class DashboardController : AdministrationController

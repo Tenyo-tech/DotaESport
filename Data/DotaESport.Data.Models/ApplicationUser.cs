@@ -5,7 +5,6 @@ namespace DotaESport.Data.Models
     using System.Collections.Generic;
 
     using DotaESport.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity

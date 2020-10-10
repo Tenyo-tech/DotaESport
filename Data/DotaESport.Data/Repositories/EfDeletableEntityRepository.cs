@@ -6,7 +6,6 @@
 
     using DotaESport.Data.Common.Models;
     using DotaESport.Data.Common.Repositories;
-
     using Microsoft.EntityFrameworkCore;
 
     public class EfDeletableEntityRepository<TEntity> : EfRepository<TEntity>, IDeletableEntityRepository<TEntity>

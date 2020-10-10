@@ -1,9 +1,8 @@
 ﻿namespace DotaESport.Web.ViewModels.Settings
 {
+    using AutoMapper;
     using DotaESport.Data.Models;
     using DotaESport.Services.Mapping;
-
-    using AutoMapper;
 
     public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
     {

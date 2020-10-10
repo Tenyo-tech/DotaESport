@@ -4,7 +4,6 @@
     using System.Threading.Tasks;
 
     using DotaESport.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
 
     public class DbQueryRunner : IDbQueryRunner

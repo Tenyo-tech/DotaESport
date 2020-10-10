@@ -1,24 +1,23 @@
-﻿using System.Security.Claims;
-using System.Text;
-using AspNet.Security.OpenId.Steam;
-using DotaESport.Web.ViewModels.Home;
-using Facebook;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Server.HttpSys;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Linq;
-
-namespace DotaESport.Web.Controllers
+﻿namespace DotaESport.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Claims;
+    using System.Text;
     using System.Threading.Tasks;
 
+    using AspNet.Security.OpenId.Steam;
     using DotaESport.Data.Models;
+    using DotaESport.Web.ViewModels.Home;
+    using Facebook;
+    using Microsoft.AspNetCore.Authentication;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Server.HttpSys;
+    using Microsoft.Extensions.DependencyInjection;
+    using Newtonsoft.Json.Linq;
 
     public class TestsController : BaseController
     {

@@ -6,7 +6,6 @@
 
     using DotaESport.Common;
     using DotaESport.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
 

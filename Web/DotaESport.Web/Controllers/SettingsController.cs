@@ -7,7 +7,6 @@
     using DotaESport.Data.Models;
     using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels.Settings;
-
     using Microsoft.AspNetCore.Mvc;
 
     public class SettingsController : BaseController

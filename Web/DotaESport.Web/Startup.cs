@@ -1,11 +1,10 @@
-﻿using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-
-namespace DotaESport.Web
+﻿namespace DotaESport.Web
 {
     using System;
+    using System.Linq;
     using System.Reflection;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
 
     using AspNet.Security.OpenId.Steam;
     using DotaESport.Data;

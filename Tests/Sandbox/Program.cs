@@ -5,6 +5,7 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using CommandLine;
     using DotaESport.Data;
     using DotaESport.Data.Common;
     using DotaESport.Data.Common.Repositories;
@@ -13,9 +14,6 @@
     using DotaESport.Data.Seeding;
     using DotaESport.Services.Data;
     using DotaESport.Services.Messaging;
-
-    using CommandLine;
-
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;

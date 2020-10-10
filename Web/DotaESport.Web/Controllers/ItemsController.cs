@@ -1,6 +1,6 @@
-﻿namespace DotaESport.Web.Controllers
+﻿
+namespace DotaESport.Web.Controllers
 {
-
     using DotaESport.Services.Data;
     using DotaESport.Web.ViewModels.Items;
     using Microsoft.AspNetCore.Mvc;
