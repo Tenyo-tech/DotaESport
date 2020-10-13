@@ -7,41 +7,47 @@
 
 
 <div id="Article" class="carousel slide" data-ride="carousel">
-        <ul class="carousel-indicators">
-            <li data-target="#Article" data-slide-to="0" class="active"></li>
-            <li data-target="#Article" data-slide-to="1"></li>
-            <li data-target="#Article" data-slide-to="2"></li>
-            <li data-target="#Article" data-slide-to="3"></li>
-        </ul>
-        <div class="carousel-inner">
-            @foreach (var article in @Model.Articles.Select((value, index) => new { value, index }))
+    <ul class="carousel-indicators">
+        <li data-target="#Article" data-slide-to="0" class="active"></li>
+        <li data-target="#Article" data-slide-to="1"></li>
+        <li data-target="#Article" data-slide-to="2"></li>
+        <li data-target="#Article" data-slide-to="3"></li>
+    </ul>
+    <div class="carousel-inner">
+        @foreach (var article in @Model.Articles.Select((value, index) => new { value, index }))
+        {
+            if (article.index == 0)
             {
-                if (article.index == 0)
-                {
-                    <div class="carousel-item active">
-                        <a asp-controller="Articles" asp-action="ById" asp-route-id="@article.value.Id"><img src="@article.value.ImgUrl" alt="@article.value.Title" class="carousel-inner-img"></a>
-                        <div class="carousel-caption">
-                            <h3>@article.value.Title</h3>
-                        </div>
+                <div class="carousel-item active">
+                    <a asp-controller="Articles" asp-action="ById" asp-route-id="@article.value.Id"><img src="@article.value.ImgUrl" alt="@article.value.Title" class="carousel-inner-img"></a>
+                    <div class="carousel-caption">
+                        <h3>@article.value.Title</h3>
                     </div>
-
-                }
-                else
-                {
-                    <div class="carousel-item">
-                        <a asp-controller="Articles" asp-action="ById" asp-route-id="@article.value.Id"><img src="@article.value.ImgUrl" alt="@article.value.Title" class="carousel-inner-img"></a>
-                        <div class="carousel-caption">
-                            <h3>@article.value.Title</h3>
-                        </div>
-                    </div>
-                }
+                </div>
 
             }
-        </div>
-        <a class="carousel-control-prev" href="#Article" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#Article" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+            else
+            {
+                <div class="carousel-item">
+                    <a asp-controller="Articles" asp-action="ById" asp-route-id="@article.value.Id"><img src="@article.value.ImgUrl" alt="@article.value.Title" class="carousel-inner-img"></a>
+                    <div class="carousel-caption">
+                        <h3>@article.value.Title</h3>
+                    </div>
+                </div>
+            }
+
+        }
     </div>
+    <a class="carousel-control-prev" href="#Article" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#Article" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<br />
+<div class="row justify-content-center" onclick="hello()">
+    <button class="btn btn-lg btn-primary text-center"> Click me</button>
+</div>
+<div id="placeholderElement">  </div>

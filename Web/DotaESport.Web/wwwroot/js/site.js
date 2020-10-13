@@ -8,10 +8,10 @@ function takeName(nameHero) {
     document.getElementById("heroName").innerHTML = nameHero;
 }
 
-function takeInfo(itemName, itemGold, itemImage2, lore, descrTitle,description,cooldown,manacost) {
+function takeInfo(itemName, itemGold, itemImage2, lore, descrTitle, description, cooldown, manacost) {
     document.getElementById("ItemName").innerHTML = itemName;
     document.getElementById("ItemGold").innerHTML = itemGold;
-    document.getElementById("ItemImage2").src = itemImage2; 
+    document.getElementById("ItemImage2").src = itemImage2;
     document.getElementById("Lore").innerHTML = lore;
     document.getElementById("DescrTitle").innerHTML = descrTitle;
     document.getElementById("Description").innerHTML = description;
@@ -46,3 +46,18 @@ $(function () {
         $(e).attr("title", $(e).attr("datetime"));
     });
 });
+
+// teseting ajax
+
+function hello() {
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert(this.responseText);
+        }
+    }
+    xhr.open("GET", "/Home/Index", true);
+    xhr.send();
+}
