@@ -1,14 +1,15 @@
 ﻿using DotaESport.MongoDb.Data;
-using DotaESport.MongoDb.Data.Models;
 using MongoDB.Driver;
 using OpenDotaDotNet;
+using OpenDotaDotNet.Models.Heroes;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DotaESport.Services.MongoDb.Data
 {
-    public class HeroMongoDbService : IHeroMongoDbService
+    public class HeroMongoDbService
     {
         private readonly IMongoCollection<Hero> heroesRepository;
 
@@ -16,16 +17,16 @@ namespace DotaESport.Services.MongoDb.Data
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-
+            ;
             heroesRepository = database.GetCollection<Hero>("Heroes");
         }
-        public void GetAllHeroes()
+        public IEnumerable<Hero> GetAllHeroes()
         {
             var openDota = new OpenDotaApi();
 
-            var heroes = openDota.Heroes;
-            ;
-            return ;
+            var heroes = openDota.Heroes.GetHeroesAsync().Result;
+
+            return heroes;
         }
     }
 }

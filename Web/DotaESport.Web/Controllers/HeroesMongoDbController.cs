@@ -10,18 +10,18 @@
 
     public class HeroesMongoDbController : BaseController
     {
-        private readonly IHeroMongoDbService heroMongoDbService;
+        private readonly HeroMongoDbService heroMongoDbService;
 
-        public HeroesMongoDbController(IHeroMongoDbService heroMongoDbService)
+        public HeroesMongoDbController(HeroMongoDbService heroMongoDbService)
         {
             this.heroMongoDbService = heroMongoDbService;
         }
 
-        public IActionResult AllHeroesMongoDb()
+        public IActionResult All()
         {
-            this.heroMongoDbService.GetAllHeroes();
+            var heroes = this.heroMongoDbService.GetAllHeroes();
 
-            return this.View();
+            return this.View(heroes);
         }
     }
 }

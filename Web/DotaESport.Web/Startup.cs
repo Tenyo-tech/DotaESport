@@ -74,10 +74,10 @@
             services.Configure<DotaESportDatabaseSettings>(
        this.configuration.GetSection(nameof(DotaESportDatabaseSettings)));
 
-            services.AddSingleton<IDotaESportDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<DotaESportDatabaseSettings>>().Value);
+            services.AddSingleton<IDotaESportDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DotaESportDatabaseSettings>>().Value);
 
             services.AddSingleton<HeroMongoDbService>();
+
 
             services.AddControllersWithViews(options =>
                 {
