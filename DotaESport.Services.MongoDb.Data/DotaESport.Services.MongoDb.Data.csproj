@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
     <PackageReference Include="OpenDota.NET" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotaESport.MongoDb.Data.Models\DotaESport.MongoDb.Data.Models.csproj" />
+    <ProjectReference Include="..\DotaESport.MongoDb.Data\DotaESport.MongoDb.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,9 +13,11 @@
     using DotaESport.Data.Models;
     using DotaESport.Data.Repositories;
     using DotaESport.Data.Seeding;
+    using DotaESport.MongoDb.Data;
     using DotaESport.Services.Data;
     using DotaESport.Services.Mapping;
     using DotaESport.Services.Messaging;
+    using DotaESport.Services.MongoDb.Data;
     using DotaESport.Web.Hubs;
     using DotaESport.Web.ViewModels;
     using Microsoft.AspNetCore.Builder;
@@ -26,6 +28,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Options;
 
     public class Startup
     {
@@ -68,6 +71,14 @@
             //     facebookOptions.AppSecret = this.configuration["Authentication:Facebook:AppSecret"];
             // })
 
+            services.Configure<DotaESportDatabaseSettings>(
+       this.configuration.GetSection(nameof(DotaESportDatabaseSettings)));
+
+            services.AddSingleton<IDotaESportDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<DotaESportDatabaseSettings>>().Value);
+
+            services.AddSingleton<HeroMongoDbService>();
+
             services.AddControllersWithViews(options =>
                 {
                     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
@@ -85,6 +96,7 @@
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);
+
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));

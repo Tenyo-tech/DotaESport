@@ -40,6 +40,7 @@
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.76" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.8" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
     <PackageReference Include="OpenDota.NET" Version="2.2.0" />
     <PackageReference Include="SteamWebAPI" Version="2.0.1" />
     <PackageReference Include="SteamWebAPI2" Version="4.2.5" />
@@ -51,6 +52,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\DotaESport.Data.Models\DotaESport.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\DotaESport.Data\DotaESport.Data.csproj" />
+    <ProjectReference Include="..\..\DotaESport.MongoDb.Data.Models\DotaESport.MongoDb.Data.Models.csproj" />
+    <ProjectReference Include="..\..\DotaESport.MongoDb.Data\DotaESport.MongoDb.Data.csproj" />
+    <ProjectReference Include="..\..\DotaESport.Services.MongoDb.Data\DotaESport.Services.MongoDb.Data.csproj" />
     <ProjectReference Include="..\..\Services\DotaESport.Services.Data\DotaESport.Services.Data.csproj" />
     <ProjectReference Include="..\..\Services\DotaESport.Services.Mapping\DotaESport.Services.Mapping.csproj" />
     <ProjectReference Include="..\..\Services\DotaESport.Services.Messaging\DotaESport.Services.Messaging.csproj" />

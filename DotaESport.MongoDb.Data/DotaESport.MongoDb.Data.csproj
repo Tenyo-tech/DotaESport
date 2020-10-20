@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
+    <PackageReference Include="OpenDota.NET" Version="2.2.0" />
+  </ItemGroup>
+
 </Project>

@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaESport.MongoDb.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaESport.MongoDb.Data.Models", "DotaESport.MongoDb.Data.Models\DotaESport.MongoDb.Data.Models.csproj", "{EE948CF3-FE9B-467D-B136-17F4D1DDE3BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotaESport.Services.MongoDb.Data", "DotaESport.Services.MongoDb.Data\DotaESport.Services.MongoDb.Data.csproj", "{82E464D3-4812-47F3-8FD6-9671939B6C6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +120,10 @@ Global
 		{EE948CF3-FE9B-467D-B136-17F4D1DDE3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE948CF3-FE9B-467D-B136-17F4D1DDE3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE948CF3-FE9B-467D-B136-17F4D1DDE3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E464D3-4812-47F3-8FD6-9671939B6C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E464D3-4812-47F3-8FD6-9671939B6C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E464D3-4812-47F3-8FD6-9671939B6C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E464D3-4812-47F3-8FD6-9671939B6C6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{13B7AACB-9C85-4409-8D4B-95A67D0DFFF7} = {E389DEB6-5F90-444B-A054-12A10D39C76F}
 		{C0CD6F0D-DC80-4D40-9BCB-F09B78BA6726} = {ACBE44C4-E198-45E2-BA02-6655250A0006}
 		{EE948CF3-FE9B-467D-B136-17F4D1DDE3BC} = {ACBE44C4-E198-45E2-BA02-6655250A0006}
+		{82E464D3-4812-47F3-8FD6-9671939B6C6B} = {516E002B-9E6E-4456-B7F6-EAA353966DE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {384484BE-4680-4529-9CC2-AD37BA4D12D1}

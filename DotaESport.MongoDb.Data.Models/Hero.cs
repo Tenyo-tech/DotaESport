@@ -6,5 +6,6 @@ namespace DotaESport.MongoDb.Data.Models
 {
     public class Hero
     {
+
     }
 }
