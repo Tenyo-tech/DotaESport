@@ -59,6 +59,9 @@
 
             string addLastLine = "asd2";
 
+
+            string line1 = "line1";
+
             string line2 = "line2";
 
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
