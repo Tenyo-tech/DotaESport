@@ -51,7 +51,9 @@
 
             string myName = "Tenyo";
 
-            string myBrothername = "Kiril";
+            string myBrotherName = "Kiril";
+
+            string myDadsName = "Gosho";
 
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
             //var item7 = SteamAuthenticationConstants.Parameters.Players;
