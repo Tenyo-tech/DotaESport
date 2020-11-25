@@ -49,7 +49,12 @@
             string test2 = "test2";
             string test3 = "test3";
 
+<<<<<<< HEAD
             string myName = "Tenyo";
+=======
+            string myBrothername = "Kiril";
+
+>>>>>>> d952175d5e81ed3b4e2703ad36554ca0beff3571
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
             //var item7 = SteamAuthenticationConstants.Parameters.Players;
             //var item8 = SteamAuthenticationConstants.Parameters.Response;
