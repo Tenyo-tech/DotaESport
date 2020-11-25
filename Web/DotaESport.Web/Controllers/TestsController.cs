@@ -44,6 +44,8 @@
             var item3 = steamAuthenticationOptions.UserInformationEndpoint;
             var item4 = SteamAuthenticationConstants.Parameters.Name;
             var item5 = SteamAuthenticationConstants.Parameters.SteamId;
+
+            string test = "test";
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
             //var item7 = SteamAuthenticationConstants.Parameters.Players;
             //var item8 = SteamAuthenticationConstants.Parameters.Response;

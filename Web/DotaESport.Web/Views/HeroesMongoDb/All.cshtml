@@ -1,0 +1,79 @@
+﻿@using OpenDotaDotNet.Models.Heroes
+@model IEnumerable<Hero>
+@{
+    this.ViewData["Title"] = "All Heroes";
+}
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 text-center">
+        <h1 id="heroName" class="text-center text-warning text-opacity">CHOOSE A HERO</h1>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div id="columnHeader">
+                <span id="columnHeaderTextStr" class="text-opacity text-warning">STRENGTH</span>
+                <hr />
+            </div>
+            @foreach (var hero in Model)
+            {
+                @if (hero.PrimaryAttribute == HeroPrimaryAttribute.Str)
+                {
+                    <div class="heroContainer">
+                        <h3>
+                            @hero.LocalizedName
+                        </h3>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="col-4">
+            <div id="columnHeader">
+                <span id="columnHeaderTextAgi" class="text-opacity text-warning">AGILITY</span>
+                <hr />
+            </div>
+            @foreach (var hero in Model)
+            {
+                @if (hero.PrimaryAttribute == HeroPrimaryAttribute.Agi)
+                {
+                    <div class="heroContainer">
+                        <h3>
+                            @hero.LocalizedName
+                        </h3>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="col-4">
+            <div id="columnHeader">
+                <span id="columnHeaderTextInt" class="text-opacity text-warning">INTELLIGENCE</span>
+                <hr />
+            </div>
+            @foreach (var hero in Model)
+            {
+                @if (hero.PrimaryAttribute == HeroPrimaryAttribute.Int)
+                {
+                    <div class="heroContainer">
+                        <h3>
+                            @hero.LocalizedName
+                        </h3>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <a class="btn btn-primary" asp-controller="Heroes" asp-action="Add">Add Hero</a>
+    </div>
+</div>
