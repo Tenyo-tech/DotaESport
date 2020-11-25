@@ -48,7 +48,9 @@
             string test = "test";
             string test2 = "test2";
             string test3 = "test3";
-            string name = "Tenyo";
+
+            string myBrothername = "Kiril";
+
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
             //var item7 = SteamAuthenticationConstants.Parameters.Players;
             //var item8 = SteamAuthenticationConstants.Parameters.Response;
