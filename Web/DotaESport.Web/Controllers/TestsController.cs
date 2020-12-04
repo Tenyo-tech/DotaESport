@@ -45,24 +45,7 @@
             var item4 = SteamAuthenticationConstants.Parameters.Name;
             var item5 = SteamAuthenticationConstants.Parameters.SteamId;
 
-            string addLine = "asd";
-
-            string test = "test";
-            string test2 = "test2";
-            string test3 = "test3";
-
-            string myName = "Tenyo";
-
-            string myBrotherName = "Kiril";
-
-            string myDadsName = "Gosho";
-
-            string addLastLine = "asd2";
-
-
-            string line1 = "line1";
-
-            string line2 = "line2";
+            string line = "ASD1";
 
 
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
