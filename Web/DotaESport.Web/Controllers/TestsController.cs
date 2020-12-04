@@ -64,7 +64,6 @@
 
             string line2 = "line2";
 
-            string line3 = "line3";
 
             //var item6 = SteamAuthenticationConstants.Parameters.Key;
             //var item7 = SteamAuthenticationConstants.Parameters.Players;
