@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlSanitizer" Version="5.0.319" />
+    <PackageReference Include="HtmlSanitizer" Version="5.0.372" />
     <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
     <PackageReference Include="OpenDota.NET" Version="2.2.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" PrivateAssets="all">
